@@ -29,9 +29,7 @@ input[type="radio"] {
    ========================================================= */
 
 .site-header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 5px;
 }
 
 .header-image {
@@ -39,7 +37,7 @@ input[type="radio"] {
   width: 100%;
   max-width: 100%;
   height: auto;
-  margin: 0;
+  margin: auto 0;
 }
 
 /* =========================================================
@@ -48,9 +46,9 @@ input[type="radio"] {
 
 .page {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 5px;
 }
 
 /* =========================================================
@@ -145,7 +143,7 @@ input[type="radio"] {
   cursor: pointer;
   color: #6f6a60;
   border: 1px solid #e4e1da;
-  border-radius: 0;
+  border-radius: 999px;
   padding: 8px 18px;
   transition: all 0.2s ease;
 }
