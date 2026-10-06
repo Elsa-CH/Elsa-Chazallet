@@ -58,6 +58,7 @@ input[type="radio"] {
 .tabs {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Centre les onglets horizontalement */
   gap: 10px;
   padding: 16px 24px;
   margin: 40px 0 30px;
@@ -73,7 +74,7 @@ input[type="radio"] {
   cursor: pointer;
   color: #6f6a60;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: 4px; /* Remplacé 999px par 4px pour rendre les onglets rectangulaires */
   padding: 8px 18px;
   transition: all 0.2s ease;
 }
