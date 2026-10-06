@@ -29,7 +29,7 @@ input[type="radio"] {
    ========================================================= */
 
 .site-header {
-  margin: 0;
+  margin: 5px;
 }
 
 .header-image {
@@ -48,7 +48,7 @@ input[type="radio"] {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 5px;
 }
 
 /* =========================================================
@@ -62,7 +62,7 @@ input[type="radio"] {
   gap: 10px;
   padding: 16px 24px;
   margin: 40px auto 30px;
-  background: #e8e5df;
+  background: #ffffff;
   border: 1px solid #e4e1da;
   border-radius: 0;
 }
