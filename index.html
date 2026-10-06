@@ -1,387 +1,163 @@
-/* =========================================================
-   BASE
-   ========================================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #f7f5f1;
-  color: #1c1b18;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Toutes les commandes radio invisibles */
-
-input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* =========================================================
-   EN-TÊTE
-   ========================================================= */
-
-.site-header {
-  margin: 0;
-}
-
-.header-image {
-  display: block;
-  width: 100%;
-  max-width: 1024px;
-  height: auto;
-  margin: 40px auto 0;
-}
-
-/* =========================================================
-   PAGE
-   ========================================================= */
-
-.page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px 80px;
-}
-
-/* =========================================================
-   ONGLETS
-   ========================================================= */
-
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 16px 24px;
-  margin: 40px 0 30px;
-  background: #e8e5df;
-  border: 1px solid #e4e1da;
-  border-radius: 2px;
-}
-
-.tab {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: #6f6a60;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  padding: 8px 18px;
-  transition: all 0.2s ease;
-}
-
-.tab:hover {
-  color: #1c1b18;
-  border-color: #1c1b18;
-}
-
-/* Onglet actif */
-
-#tab-galerie:checked ~ .page label[for="tab-galerie"],
-#tab-apropos:checked ~ .page label[for="tab-apropos"],
-#tab-cv:checked ~ .page label[for="tab-cv"],
-#tab-contacts:checked ~ .page label[for="tab-contacts"],
-#tab-boutique:checked ~ .page label[for="tab-boutique"] {
-  background: #1c1b18;
-  color: #fff;
-  border-color: #1c1b18;
-}
-
-/* Panneaux : seul l'onglet actif est affiché */
-
-.panel {
-  display: none;
-}
-
-#tab-galerie:checked ~ .page #panel-galerie,
-#tab-apropos:checked ~ .page #panel-apropos,
-#tab-cv:checked ~ .page #panel-cv,
-#tab-contacts:checked ~ .page #panel-contacts,
-#tab-boutique:checked ~ .page #panel-boutique {
-  display: block;
-}
-
-.panel h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-
-/* =========================================================
-   GALERIE
-   ========================================================= */
-
-.ecg {
-  margin: 6px 0 30px;
-}
-
-/* --- Barre des modes --- */
-
-.ecg-bar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
-}
-
-.ecg-mode,
-.ecg-chip {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  background: none;
-  cursor: pointer;
-  color: #6f6a60;
-  border: 1px solid #e4e1da;
-  border-radius: 999px;
-  padding: 8px 18px;
-  transition: all 0.2s ease;
-}
-
-.ecg-mode:hover,
-.ecg-chip:hover {
-  border-color: #1c1b18;
-  color: #1c1b18;
-}
-
-/* Mode actif */
-
-#ecg-tri:checked ~ .page .ecg-mode[for="ecg-tri"],
-#ecg-vrac:checked ~ .page .ecg-mode[for="ecg-vrac"] {
-  background: #1c1b18;
-  border-color: #1c1b18;
-  color: #fff;
-}
-
-/* --- Filtres --- */
-
-.ecg-chips {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 4px 0 24px;
-}
-
-/* Filtre actif */
-
-#ecg-tout:checked ~ .page .ecg-chip[for="ecg-tout"],
-#ecg-visuel:checked ~ .page .ecg-chip[for="ecg-visuel"],
-#ecg-sonore:checked ~ .page .ecg-chip[for="ecg-sonore"],
-#ecg-performatif:checked ~ .page .ecg-chip[for="ecg-performatif"],
-#ecg-design:checked ~ .page .ecg-chip[for="ecg-design"],
-#ecg-transversal:checked ~ .page .ecg-chip[for="ecg-transversal"] {
-  background: #9a5b3c;
-  border-color: #9a5b3c;
-  color: #fff;
-}
-
-/* En mode décloisonné, les filtres disparaissent */
-
-#ecg-vrac:checked ~ .page .ecg-chips {
-  display: none;
-}
-
-/* =========================================================
-   GRILLE
-   ========================================================= */
-
-.ecg-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-@media (max-width: 900px) {
-  .ecg-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .ecg-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================================================
-   CARTES
-   ========================================================= */
-
-.ecg-card {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  border-radius: 2px;
-  text-decoration: none;
-  background: #e8e5df;
-
-  /* Animation */
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-.ecg-card img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.ecg-card:hover img {
-  transform: scale(1.05);
-}
-
-/* =========================================================
-   ORDRE DES CARTES
-   ========================================================= */
-
-/*
-   En mode Cloisonné :
-   Visuel → Sonore → Performatif → Design → Transversal
-*/
-
-.ecg-card.visuel {
-  order: 1;
-}
-
-.ecg-card.sonore {
-  order: 2;
-}
-
-.ecg-card.performatif {
-  order: 3;
-}
-
-.ecg-card.design {
-  order: 4;
-}
-
-.ecg-card.transversal {
-  order: 5;
-}
-
-/*
-   En mode Décloisonné :
-   on revient à l'ordre naturel des cartes.
-*/
-
-#ecg-vrac:checked ~ .page .ecg-card {
-  order: initial;
-}
-
-/* =========================================================
-   FILTRES
-   ========================================================= */
-
-/* Visuel */
-
-#ecg-visuel:checked ~ .page .ecg-card:not(.visuel) {
-  display: none;
-}
-
-/* Sonore */
-
-#ecg-sonore:checked ~ .page .ecg-card:not(.sonore) {
-  display: none;
-}
-
-/* Performatif */
-
-#ecg-performatif:checked ~ .page .ecg-card:not(.performatif) {
-  display: none;
-}
-
-/* Design */
-
-#ecg-design:checked ~ .page .ecg-card:not(.design) {
-  display: none;
-}
-
-/* Transversal */
-
-#ecg-transversal:checked ~ .page .ecg-card:not(.transversal) {
-  display: none;
-}
-
-/* =========================================================
-   SURVOL
-   ========================================================= */
-
-.ecg-overlay {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
-  padding: 16px;
-
-  background: rgba(20, 18, 15, 0.45);
-
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.ecg-card:hover .ecg-overlay {
-  opacity: 1;
-}
-
-.ecg-t {
-  color: #fff;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin: 0;
-
-  transform: translateY(4px);
-  transition: transform 0.35s ease;
-}
-
-.ecg-card:hover .ecg-t {
-  transform: none;
-}
-
-.ecg-cat {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-/* =========================================================
-   MOBILE / ÉCRANS TACTILES
-   ========================================================= */
-
-@media (hover: none) {
-
-  .ecg-overlay {
-    opacity: 1;
-  }
-
-  .ecg-t {
-    transform: none;
-  }
-
-}
-
-/* =========================================================
-   ACCESSIBILITÉ
-   ========================================================= */
-
-.ecg-card:focus-visible {
-  outline: 2px solid #1c1b18;
-  outline-offset: 3px;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elsa Chazallet — Portfolio</title>
+  <meta name="description" content="Portfolio d'Elsa Chazallet : projets visuels, sonores, performatifs, design et transversaux.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       EN-TÊTE
+       ========================================================= -->
+
+  <header class="site-header">
+    <img src="images/minfichier-1.png" alt="" class="header-image">
+  </header>
+
+  <!-- =========================================================
+       COMMANDES INVISIBLES (ONGLETS)
+       ========================================================= -->
+
+  <input type="radio" name="tab" id="tab-galerie" checked>
+  <input type="radio" name="tab" id="tab-apropos">
+  <input type="radio" name="tab" id="tab-cv">
+  <input type="radio" name="tab" id="tab-contacts">
+  <input type="radio" name="tab" id="tab-boutique">
+
+  <!-- =========================================================
+       COMMANDES INVISIBLES (GALERIE : MODES + FILTRES)
+       ========================================================= -->
+
+  <input type="radio" name="ecg-mode" id="ecg-tri" checked>
+  <input type="radio" name="ecg-mode" id="ecg-vrac">
+
+  <input type="radio" name="ecg-filtre" id="ecg-tout" checked>
+  <input type="radio" name="ecg-filtre" id="ecg-visuel">
+  <input type="radio" name="ecg-filtre" id="ecg-sonore">
+  <input type="radio" name="ecg-filtre" id="ecg-performatif">
+  <input type="radio" name="ecg-filtre" id="ecg-design">
+  <input type="radio" name="ecg-filtre" id="ecg-transversal">
+
+  <main class="page">
+
+    <!-- =====================================================
+         BARRE D'ONGLETS
+         ===================================================== -->
+
+    <nav class="tabs" role="tablist">
+      <label class="tab" for="tab-galerie">Galerie des Projets</label>
+      <label class="tab" for="tab-apropos">À propos</label>
+      <label class="tab" for="tab-cv">Curriculum Vitae</label>
+      <label class="tab" for="tab-contacts">Contacts</label>
+      <label class="tab" for="tab-boutique">Boutique</label>
+    </nav>
+
+    <!-- =====================================================
+         ONGLET : GALERIE DES PROJETS
+         ===================================================== -->
+
+    <section class="panel" id="panel-galerie">
+
+      <div class="ecg">
+
+        <!-- BARRE DES MODES -->
+
+        <div class="ecg-bar">
+          <label class="ecg-mode" for="ecg-tri">Cloisonné</label>
+          <label class="ecg-mode" for="ecg-vrac">Décloisonné</label>
+        </div>
+
+        <!-- FILTRES -->
+
+        <div class="ecg-chips">
+          <label class="ecg-chip" for="ecg-tout">Tout</label>
+          <label class="ecg-chip" for="ecg-visuel">Visuel</label>
+          <label class="ecg-chip" for="ecg-sonore">Sonore</label>
+          <label class="ecg-chip" for="ecg-performatif">Performatif</label>
+          <label class="ecg-chip" for="ecg-design">Design</label>
+          <label class="ecg-chip" for="ecg-transversal">Transversal</label>
+        </div>
+
+        <!-- GALERIE -->
+
+        <div class="ecg-grid">
+
+          <!-- ŒUVRE 1 -->
+          <a class="ecg-card visuel" href="#">
+            <img src="images/oeuvre-1.jpg" alt="Sans titre 1">
+            <div class="ecg-overlay">
+              <span class="ecg-cat">Visuel</span>
+              <h3 class="ecg-t">Sans titre 1</h3>
+            </div>
+          </a>
+
+          <!-- ŒUVRE 2 -->
+          <a class="ecg-card visuel" href="#">
+            <img src="images/oeuvre-2.jpg" alt="Sans titre 2">
+            <div class="ecg-overlay">
+              <span class="ecg-cat">Visuel</span>
+              <h3 class="ecg-t">Sans titre 2</h3>
+            </div>
+          </a>
+
+          <!-- ŒUVRE 3 -->
+          <a class="ecg-card performatif" href="#">
+            <img src="images/oeuvre-3.jpg" alt="Sans titre 3">
+            <div class="ecg-overlay">
+              <span class="ecg-cat">Performatif</span>
+              <h3 class="ecg-t">Sans titre 3</h3>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         ONGLET : À PROPOS
+         ===================================================== -->
+
+    <section class="panel" id="panel-apropos">
+      <h2>À propos</h2>
+      <p>Texte de présentation à venir.</p>
+    </section>
+
+    <!-- =====================================================
+         ONGLET : CURRICULUM VITAE
+         ===================================================== -->
+
+    <section class="panel" id="panel-cv">
+      <h2>Curriculum Vitae</h2>
+      <p>Contenu du CV à venir.</p>
+    </section>
+
+    <!-- =====================================================
+         ONGLET : CONTACTS
+         ===================================================== -->
+
+    <section class="panel" id="panel-contacts">
+      <h2>Contacts</h2>
+      <p>
+        Email : <a href="mailto:exemple@domaine.fr">exemple@domaine.fr</a><br>
+        Instagram : <a href="#">@ton-compte</a>
+      </p>
+    </section>
+
+    <!-- =====================================================
+         ONGLET : BOUTIQUE
+         ===================================================== -->
+
+    <section class="panel" id="panel-boutique">
+      <h2>Boutique</h2>
+      <p>La boutique arrive bientôt.</p>
+    </section>
+
+  </main>
+
+</body>
+</html>
