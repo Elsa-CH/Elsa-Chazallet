@@ -59,7 +59,7 @@ input[type="radio"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding: 16px 24px;
   margin: 40px auto 30px;
   background: #ffffff;
