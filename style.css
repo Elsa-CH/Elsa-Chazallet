@@ -1,6 +1,16 @@
 /* =========================================================
    BASE
+   Police : Jost (gratuite, très proche de Futura), chargée
+   depuis Google Fonts dans le <head> du fichier index.html.
    ========================================================= */
+
+:root {
+  --noir: #000;
+  --blanc: #fff;
+  --gris-bloc: #e0e0de;
+  --gris-survol: #f1f1ef;
+  --police: "Jost", "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
+}
 
 * {
   box-sizing: border-box;
@@ -8,36 +18,26 @@
 
 body {
   margin: 0;
-  padding: 0;
-  background: #ffffff;
-  color: #1c1b18;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--blanc);
+  color: var(--noir);
+  font-family: var(--police);
   font-size: 1rem;
+  font-weight: 300;
   line-height: 1.6;
 }
 
-/* Toutes les commandes radio invisibles */
+a {
+  color: inherit;
+}
 
+/* Les boutons radio qui pilotent les onglets et les filtres
+   sont invisibles (mais restent accessibles au clavier). */
 input[type="radio"] {
   position: absolute;
+  width: 1px;
+  height: 1px;
   opacity: 0;
   pointer-events: none;
-}
-
-/* =========================================================
-   EN-TÊTE
-   ========================================================= */
-
-.site-header {
-  margin: 5px;
-}
-
-.header-image {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: auto 0;
 }
 
 /* =========================================================
@@ -46,9 +46,32 @@ input[type="radio"] {
 
 .page {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 28px 5% 60px;
+}
+
+/* =========================================================
+   EN-TÊTE (bloc réservé à ton image)
+   ========================================================= */
+
+.header-image {
+  width: 51%;
+  min-width: 260px;
+  aspect-ratio: 665 / 147;
+  background: var(--gris-bloc);
+}
+
+.header-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Dès qu'une image est placée dans le bloc, le gris disparaît */
+.header-image:has(img) {
+  aspect-ratio: auto;
+  background: none;
 }
 
 /* =========================================================
@@ -58,187 +81,152 @@ input[type="radio"] {
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 16px 24px;
-  margin: 40px auto 30px;
-  background: #ffffff;
-  border: 1px solid #e4e1da;
-  border-radius: 0;
+  gap: 36px;
+  width: 72%;
+  max-width: 940px;
+  margin: 46px auto 48px;
 }
 
 .tab {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
+  flex: 1 1 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  padding: 0 12px;
+  border: 1px solid var(--noir);
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
   cursor: pointer;
-  color: #6f6a60;
-  border: 1px solid transparent;
-  border-radius: 0;
-  padding: 8px 18px;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .tab:hover {
-  color: #1c1b18;
-  border-color: #1c1b18;
+  background: var(--gris-survol);
 }
 
 /* Onglet actif */
-
-#tab-galerie:checked ~ .page label[for="tab-galerie"],
 #tab-apropos:checked ~ .page label[for="tab-apropos"],
-#tab-cv:checked ~ .page label[for="tab-cv"],
+#tab-galerie:checked ~ .page label[for="tab-galerie"],
 #tab-contacts:checked ~ .page label[for="tab-contacts"],
+#tab-cv:checked ~ .page label[for="tab-cv"],
 #tab-boutique:checked ~ .page label[for="tab-boutique"] {
-  background: #1c1b18;
-  color: #fff;
-  border-color: #1c1b18;
+  background: var(--noir);
+  color: var(--blanc);
 }
 
 /* Panneaux : seul l'onglet actif est affiché */
-
 .panel {
   display: none;
 }
 
-#tab-galerie:checked ~ .page #panel-galerie,
 #tab-apropos:checked ~ .page #panel-apropos,
-#tab-cv:checked ~ .page #panel-cv,
+#tab-galerie:checked ~ .page #panel-galerie,
 #tab-contacts:checked ~ .page #panel-contacts,
+#tab-cv:checked ~ .page #panel-cv,
 #tab-boutique:checked ~ .page #panel-boutique {
   display: block;
 }
 
-.panel h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
+/* Panneaux de texte (à propos, cv, contacts, boutique) */
+.panel-texte {
+  width: 72%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.panel-texte h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 /* =========================================================
-   GALERIE
+   FILTRES
    ========================================================= */
 
-.ecg {
-  margin: 6px 0 30px;
-}
-
-/* --- Barre des modes --- */
-
-.ecg-bar {
+.chips {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 6px;
+  gap: 14px;
+  width: 72%;
+  max-width: 940px;
+  margin: 0 auto 45px;
 }
 
-.ecg-mode,
-.ecg-chip {
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  background: none;
+.chip {
+  min-width: 98px;
+  padding: 4px 22px;
+  border: 1px solid var(--noir);
+  border-radius: 7px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
   cursor: pointer;
-  color: #6f6a60;
-  border: 1px solid #e4e1da;
-  border-radius: 999px;
-  padding: 8px 18px;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
 }
 
-.ecg-mode:hover,
-.ecg-chip:hover {
-  border-color: #1c1b18;
-  color: #1c1b18;
+.chip:hover {
+  background: var(--gris-survol);
 }
 
-/* Mode actif */
-
-#ecg-tri:checked ~ .page .ecg-mode[for="ecg-tri"],
-#ecg-vrac:checked ~ .page .ecg-mode[for="ecg-vrac"] {
-  background: #1c1b18;
-  border-color: #1c1b18;
-  color: #fff;
-}
-
-/* --- Filtres --- */
-
-.ecg-chips {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 4px 0 24px;
-}
-
-/* Filtre actif */
-
-#ecg-tout:checked ~ .page .ecg-chip[for="ecg-tout"],
-#ecg-visuel:checked ~ .page .ecg-chip[for="ecg-visuel"],
-#ecg-sonore:checked ~ .page .ecg-chip[for="ecg-sonore"],
-#ecg-performatif:checked ~ .page .ecg-chip[for="ecg-performatif"],
-#ecg-design:checked ~ .page .ecg-chip[for="ecg-design"],
-#ecg-transversal:checked ~ .page .ecg-chip[for="ecg-transversal"] {
-  background: #9a5b3c;
-  border-color: #9a5b3c;
-  color: #fff;
-}
-
-/* En mode décloisonné, les filtres disparaissent */
-
-#ecg-vrac:checked ~ .page .ecg-chips {
-  display: none;
+/* Filtre actif : gras + contour épaissi (sans décaler la mise en page) */
+#f-tout:checked ~ .page .chip[for="f-tout"],
+#f-visuel:checked ~ .page .chip[for="f-visuel"],
+#f-sonore:checked ~ .page .chip[for="f-sonore"],
+#f-design:checked ~ .page .chip[for="f-design"],
+#f-performatif:checked ~ .page .chip[for="f-performatif"] {
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--noir);
 }
 
 /* =========================================================
-   GRILLE — 5 IMAGES PAR LIGNE
+   GRILLE — 4 PROJETS PAR LIGNE
    ========================================================= */
 
-.ecg-grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
-@media (max-width: 1100px) {
-  .ecg-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .ecg-grid {
+@media (max-width: 900px) {
+  .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabs,
+  .chips,
+  .panel-texte {
+    width: 100%;
+  }
+
+  .tabs {
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .ecg-grid {
+  .grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* =========================================================
-   CARTES
+   CARTES (un projet = un lien vers son URL)
    ========================================================= */
 
-.ecg-card {
+.card {
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
-  border-radius: 2px;
+  aspect-ratio: 6 / 5;
+  background: var(--gris-bloc);
   text-decoration: none;
-  background: #e8e5df;
-
-  /* Animation */
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
 }
 
-.ecg-card img {
+.card img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -247,79 +235,22 @@ input[type="radio"] {
   transition: transform 0.5s ease;
 }
 
-.ecg-card:hover img {
+.card:hover img,
+.card:focus-visible img {
   transform: scale(1.05);
 }
 
 /* =========================================================
-   ORDRE DES CARTES
+   FILTRAGE
+   Une carte peut avoir plusieurs classes (ex. "visuel performatif") :
+   elle reste visible dès que l'une d'elles correspond au filtre.
+   "Tout" n'a pas de règle : tout reste affiché.
    ========================================================= */
 
-/*
-   En mode Cloisonné :
-   Visuel → Sonore → Performatif → Design → Transversal
-*/
-
-.ecg-card.visuel {
-  order: 1;
-}
-
-.ecg-card.sonore {
-  order: 2;
-}
-
-.ecg-card.performatif {
-  order: 3;
-}
-
-.ecg-card.design {
-  order: 4;
-}
-
-.ecg-card.transversal {
-  order: 5;
-}
-
-/*
-   En mode Décloisonné :
-   on revient à l'ordre naturel des cartes.
-*/
-
-#ecg-vrac:checked ~ .page .ecg-card {
-  order: initial;
-}
-
-/* =========================================================
-   FILTRES
-   ========================================================= */
-
-/* Visuel */
-
-#ecg-visuel:checked ~ .page .ecg-card:not(.visuel) {
-  display: none;
-}
-
-/* Sonore */
-
-#ecg-sonore:checked ~ .page .ecg-card:not(.sonore) {
-  display: none;
-}
-
-/* Performatif */
-
-#ecg-performatif:checked ~ .page .ecg-card:not(.performatif) {
-  display: none;
-}
-
-/* Design */
-
-#ecg-design:checked ~ .page .ecg-card:not(.design) {
-  display: none;
-}
-
-/* Transversal */
-
-#ecg-transversal:checked ~ .page .ecg-card:not(.transversal) {
+#f-visuel:checked ~ .page .card:not(.visuel),
+#f-sonore:checked ~ .page .card:not(.sonore),
+#f-design:checked ~ .page .card:not(.design),
+#f-performatif:checked ~ .page .card:not(.performatif) {
   display: none;
 }
 
@@ -327,69 +258,83 @@ input[type="radio"] {
    SURVOL
    ========================================================= */
 
-.ecg-overlay {
+.card-overlay {
   position: absolute;
   inset: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   padding: 16px;
-
-  background: rgba(20, 18, 15, 0.45);
-
+  background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
 
-.ecg-card:hover .ecg-overlay {
+.card:hover .card-overlay,
+.card:focus-visible .card-overlay {
   opacity: 1;
 }
 
-.ecg-t {
-  color: #fff;
-  font-family: Georgia, "Times New Roman", serif;
+.card-title {
+  color: var(--blanc);
   font-size: 1.15rem;
   font-weight: 500;
-  margin: 0;
-
+  line-height: 1.25;
   transform: translateY(4px);
   transition: transform 0.35s ease;
 }
 
-.ecg-card:hover .ecg-t {
+.card:hover .card-title,
+.card:focus-visible .card-title {
   transform: none;
 }
 
-.ecg-cat {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+.card-cat {
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
-/* =========================================================
-   MOBILE / ÉCRANS TACTILES
-   ========================================================= */
-
+/* Écrans tactiles : pas de survol, les titres restent visibles */
 @media (hover: none) {
-
-  .ecg-overlay {
+  .card-overlay {
     opacity: 1;
   }
 
-  .ecg-t {
+  .card-title {
     transform: none;
   }
-
 }
 
 /* =========================================================
    ACCESSIBILITÉ
    ========================================================= */
 
-.ecg-card:focus-visible {
-  outline: 2px solid #1c1b18;
+.card:focus-visible,
+.tab:focus-visible,
+.chip:focus-visible {
+  outline: 2px solid var(--noir);
   outline-offset: 3px;
+}
+
+/* Focus clavier sur les onglets et filtres (les radios sont invisibles) */
+#tab-apropos:focus-visible ~ .page label[for="tab-apropos"],
+#tab-galerie:focus-visible ~ .page label[for="tab-galerie"],
+#tab-contacts:focus-visible ~ .page label[for="tab-contacts"],
+#tab-cv:focus-visible ~ .page label[for="tab-cv"],
+#tab-boutique:focus-visible ~ .page label[for="tab-boutique"],
+#f-tout:focus-visible ~ .page label[for="f-tout"],
+#f-visuel:focus-visible ~ .page label[for="f-visuel"],
+#f-sonore:focus-visible ~ .page label[for="f-sonore"],
+#f-design:focus-visible ~ .page label[for="f-design"],
+#f-performatif:focus-visible ~ .page label[for="f-performatif"] {
+  outline: 2px solid var(--noir);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
