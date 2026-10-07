@@ -4,162 +4,182 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elsa Chazallet — Portfolio</title>
-  <meta name="description" content="Portfolio d'Elsa Chazallet : projets visuels, sonores, performatifs, design et transversaux.">
+  <meta name="description" content="Portfolio d'Elsa Chazallet : projets visuels, sonores, design et performatifs.">
+
+  <!-- Police Jost : gratuite, très proche de Futura -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- =========================================================
-       EN-TÊTE
-       ========================================================= -->
-
-  <header class="site-header">
-    <img src="images/elsachazallet.png" alt="" class="header-image">
-  </header>
-
-  <!-- =========================================================
-       COMMANDES INVISIBLES (ONGLETS)
-       ========================================================= -->
-
-  <input type="radio" name="tab" id="tab-galerie" checked>
+  <!-- Commandes invisibles : onglets -->
   <input type="radio" name="tab" id="tab-apropos">
-  <input type="radio" name="tab" id="tab-cv">
+  <input type="radio" name="tab" id="tab-galerie" checked>
   <input type="radio" name="tab" id="tab-contacts">
+  <input type="radio" name="tab" id="tab-cv">
   <input type="radio" name="tab" id="tab-boutique">
 
-  <!-- =========================================================
-       COMMANDES INVISIBLES (GALERIE : MODES + FILTRES)
-       ========================================================= -->
+  <!-- Commandes invisibles : filtres de la galerie -->
+  <input type="radio" name="filtre" id="f-tout" checked>
+  <input type="radio" name="filtre" id="f-visuel">
+  <input type="radio" name="filtre" id="f-sonore">
+  <input type="radio" name="filtre" id="f-design">
+  <input type="radio" name="filtre" id="f-performatif">
 
-  <input type="radio" name="ecg-mode" id="ecg-tri" checked>
-  <input type="radio" name="ecg-mode" id="ecg-vrac">
-
-  <input type="radio" name="ecg-filtre" id="ecg-tout" checked>
-  <input type="radio" name="ecg-filtre" id="ecg-visuel">
-  <input type="radio" name="ecg-filtre" id="ecg-sonore">
-  <input type="radio" name="ecg-filtre" id="ecg-performatif">
-  <input type="radio" name="ecg-filtre" id="ecg-design">
-  <input type="radio" name="ecg-filtre" id="ecg-transversal">
-
-  <main class="page">
+  <div class="page">
 
     <!-- =====================================================
-         BARRE D'ONGLETS
+         EN-TÊTE
+         Pour ajouter ton image : remplace le commentaire
+         ci-dessous par la ligne <img> (sans les <!-- -->).
          ===================================================== -->
+    <header class="header-image">
+      <!-- <img src="images/elsachazallet.png" alt="Elsa Chazallet"> -->
+    </header>
 
-    <nav class="tabs" role="tablist">
-      <label class="tab" for="tab-galerie">Galerie des Projets</label>
-      <label class="tab" for="tab-apropos">À propos</label>
-      <label class="tab" for="tab-cv">Curriculum Vitae</label>
-      <label class="tab" for="tab-contacts">Contacts</label>
-      <label class="tab" for="tab-boutique">Boutique</label>
+    <!-- =====================================================
+         ONGLETS
+         ===================================================== -->
+    <nav class="tabs">
+      <label class="tab" for="tab-apropos" tabindex="0">À propos</label>
+      <label class="tab" for="tab-galerie" tabindex="0">Galerie des projets</label>
+      <label class="tab" for="tab-contacts" tabindex="0">Contacts</label>
+      <label class="tab" for="tab-cv" tabindex="0">Curriculum Vitae</label>
+      <label class="tab" for="tab-boutique" tabindex="0">Boutique</label>
     </nav>
 
     <!-- =====================================================
-         ONGLET : GALERIE DES PROJETS
+         GALERIE DES PROJETS
          ===================================================== -->
-
     <section class="panel" id="panel-galerie">
 
-      <div class="ecg">
-
-        <!-- BARRE DES MODES -->
-
-        <div class="ecg-bar">
-          <label class="ecg-mode" for="ecg-tri">Cloisonné</label>
-          <label class="ecg-mode" for="ecg-vrac">Décloisonné</label>
-        </div>
-
-        <!-- FILTRES -->
-
-        <div class="ecg-chips">
-          <label class="ecg-chip" for="ecg-tout">Tout</label>
-          <label class="ecg-chip" for="ecg-visuel">Visuel</label>
-          <label class="ecg-chip" for="ecg-sonore">Sonore</label>
-          <label class="ecg-chip" for="ecg-performatif">Performatif</label>
-          <label class="ecg-chip" for="ecg-design">Design</label>
-          <label class="ecg-chip" for="ecg-transversal">Transversal</label>
-        </div>
-
-        <!-- GALERIE -->
-
-        <div class="ecg-grid">
-
-          <!-- ŒUVRE 1 -->
-          <a class="ecg-card visuel" href="#">
-            <img src="images/oeuvre-1.jpg" alt="Sans titre 1">
-            <div class="ecg-overlay">
-              <span class="ecg-cat">Visuel</span>
-              <h3 class="ecg-t">Sans titre 1</h3>
-            </div>
-          </a>
-
-          <!-- ŒUVRE 2 -->
-          <a class="ecg-card visuel" href="#">
-            <img src="images/oeuvre-2.jpg" alt="Sans titre 2">
-            <div class="ecg-overlay">
-              <span class="ecg-cat">Visuel</span>
-              <h3 class="ecg-t">Sans titre 2</h3>
-            </div>
-          </a>
-
-          <!-- ŒUVRE 3 -->
-          <a class="ecg-card performatif" href="#">
-            <a class="ecg-card Visuel" href="#">
-            <img src="images/oeuvre-3.jpg" alt="Passe-dessin">
-            <div class="ecg-overlay">
-              <span class="ecg-cat">Performatif</span>
-              <span class="ecg-cat">Visuel</span>
-              <h3 class="ecg-t">Passe-dessin</h3>
-            </div>
-          </a>
-
-        </div>
-
+      <div class="chips">
+        <label class="chip" for="f-tout" tabindex="0">Tout</label>
+        <label class="chip" for="f-visuel" tabindex="0">Visuel</label>
+        <label class="chip" for="f-sonore" tabindex="0">Sonore</label>
+        <label class="chip" for="f-design" tabindex="0">Design</label>
+        <label class="chip" for="f-performatif" tabindex="0">Performatif</label>
       </div>
 
+      <!--
+        COMMENT AJOUTER / MODIFIER UN PROJET
+        - href : l'adresse (URL) du projet
+        - class : "card" + une ou plusieurs sections parmi
+                  visuel, sonore, design, performatif
+                  (ex. class="card visuel performatif")
+        - <img> : décommente la ligne et indique ton fichier
+        - card-cat : les sections affichées au survol
+        - card-title : le titre affiché au survol
+        Un projet apparaît toujours dans "Tout".
+      -->
+      <div class="grid">
+
+        <a class="card visuel" href="https://URL-DU-PROJET-1">
+          <!-- <img src="images/projet-1.jpg" alt="Projet 1"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Visuel</span>
+            <span class="card-title">Projet 1</span>
+          </span>
+        </a>
+
+        <a class="card visuel performatif" href="https://URL-DU-PROJET-2">
+          <!-- <img src="images/projet-2.jpg" alt="Projet 2"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Visuel, Performatif</span>
+            <span class="card-title">Projet 2</span>
+          </span>
+        </a>
+
+        <a class="card sonore" href="https://URL-DU-PROJET-3">
+          <!-- <img src="images/projet-3.jpg" alt="Projet 3"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Sonore</span>
+            <span class="card-title">Projet 3</span>
+          </span>
+        </a>
+
+        <a class="card design" href="https://URL-DU-PROJET-4">
+          <!-- <img src="images/projet-4.jpg" alt="Projet 4"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Design</span>
+            <span class="card-title">Projet 4</span>
+          </span>
+        </a>
+
+        <a class="card performatif" href="https://URL-DU-PROJET-5">
+          <!-- <img src="images/projet-5.jpg" alt="Projet 5"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Performatif</span>
+            <span class="card-title">Projet 5</span>
+          </span>
+        </a>
+
+        <a class="card sonore performatif" href="https://URL-DU-PROJET-6">
+          <!-- <img src="images/projet-6.jpg" alt="Projet 6"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Sonore, Performatif</span>
+            <span class="card-title">Projet 6</span>
+          </span>
+        </a>
+
+        <a class="card visuel design" href="https://URL-DU-PROJET-7">
+          <!-- <img src="images/projet-7.jpg" alt="Projet 7"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Visuel, Design</span>
+            <span class="card-title">Projet 7</span>
+          </span>
+        </a>
+
+        <a class="card visuel" href="https://URL-DU-PROJET-8">
+          <!-- <img src="images/projet-8.jpg" alt="Projet 8"> -->
+          <span class="card-overlay">
+            <span class="card-cat">Visuel</span>
+            <span class="card-title">Projet 8</span>
+          </span>
+        </a>
+
+      </div>
     </section>
 
     <!-- =====================================================
-         ONGLET : À PROPOS
+         À PROPOS
          ===================================================== -->
-
-    <section class="panel" id="panel-apropos">
+    <section class="panel panel-texte" id="panel-apropos">
       <h2>À propos</h2>
       <p>Texte de présentation à venir.</p>
     </section>
 
     <!-- =====================================================
-         ONGLET : CURRICULUM VITAE
+         CONTACTS
          ===================================================== -->
+    <section class="panel panel-texte" id="panel-contacts">
+      <h2>Contacts</h2>
+      <p>
+        Email : <a href="mailto:exemple@domaine.fr">exemple@domaine.fr</a><br>
+        Instagram : <a href="https://www.instagram.com/ton-compte">@ton-compte</a>
+      </p>
+    </section>
 
-    <section class="panel" id="panel-cv">
+    <!-- =====================================================
+         CURRICULUM VITAE
+         ===================================================== -->
+    <section class="panel panel-texte" id="panel-cv">
       <h2>Curriculum Vitae</h2>
       <p>Contenu du CV à venir.</p>
     </section>
 
     <!-- =====================================================
-         ONGLET : CONTACTS
+         BOUTIQUE
          ===================================================== -->
-
-    <section class="panel" id="panel-contacts">
-      <h2>Contacts</h2>
-      <p>
-        Email : <a href="mailto:exemple@domaine.fr">exemple@domaine.fr</a><br>
-        Instagram : <a href="#">@ton-compte</a>
-      </p>
-    </section>
-
-    <!-- =====================================================
-         ONGLET : BOUTIQUE
-         ===================================================== -->
-
-    <section class="panel" id="panel-boutique">
+    <section class="panel panel-texte" id="panel-boutique">
       <h2>Boutique</h2>
-      <p>La boutique arrive bientôtghdfg.</p>
+      <p>La boutique arrive bientôt.</p>
     </section>
 
-  </main>
+  </div>
 
 </body>
 </html>
