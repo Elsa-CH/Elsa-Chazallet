@@ -176,9 +176,26 @@ input[type="radio"] {
 #f-visuel:checked ~ .page .chip[for="f-visuel"],
 #f-sonore:checked ~ .page .chip[for="f-sonore"],
 #f-design:checked ~ .page .chip[for="f-design"],
-#f-performatif:checked ~ .page .chip[for="f-performatif"] {
+#f-performatif:checked ~ .page .chip[for="f-performatif"],
+#ap-demarche:checked ~ .page .chip[for="ap-demarche"],
+#ap-moment:checked ~ .page .chip[for="ap-moment"] {
   font-weight: 700;
   box-shadow: 0 0 0 1px var(--noir);
+}
+
+/* Sous-onglets de "À propos" */
+.panel-texte .chips {
+  width: 100%;
+  margin: 0 0 30px;
+}
+
+.sous-panel {
+  display: none;
+}
+
+#ap-demarche:checked ~ .page #sp-demarche,
+#ap-moment:checked ~ .page #sp-moment {
+  display: block;
 }
 
 /* =========================================================
@@ -328,7 +345,9 @@ input[type="radio"] {
 #f-visuel:focus-visible ~ .page label[for="f-visuel"],
 #f-sonore:focus-visible ~ .page label[for="f-sonore"],
 #f-design:focus-visible ~ .page label[for="f-design"],
-#f-performatif:focus-visible ~ .page label[for="f-performatif"] {
+#f-performatif:focus-visible ~ .page label[for="f-performatif"],
+#ap-demarche:focus-visible ~ .page label[for="ap-demarche"],
+#ap-moment:focus-visible ~ .page label[for="ap-moment"] {
   outline: 2px solid var(--noir);
   outline-offset: 3px;
 }
