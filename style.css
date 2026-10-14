@@ -195,7 +195,8 @@ input[type="radio"] {
 }
 
 #ap-demarche:checked ~ .page #sp-demarche,
-#ap-moment:checked ~ .page #sp-moment {
+#ap-moment:checked ~ .page #sp-moment,
+#ap-presse:checked ~ .page #sp-presse{
   display: block;
 }
 
