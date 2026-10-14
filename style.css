@@ -178,7 +178,7 @@ input[type="radio"] {
 #f-design:checked ~ .page .chip[for="f-design"],
 #f-performatif:checked ~ .page .chip[for="f-performatif"],
 #ap-demarche:checked ~ .page .chip[for="ap-demarche"],
-#ap-moment:checked ~ .page .chip[for="ap-moment"]
+#ap-moment:checked ~ .page .chip[for="ap-moment"],
 #ap-presse:checked ~ .page .chip[for="ap-presse"] {
   font-weight: 700;
   box-shadow: 0 0 0 1px var(--noir);
@@ -349,7 +349,8 @@ input[type="radio"] {
 #f-design:focus-visible ~ .page label[for="f-design"],
 #f-performatif:focus-visible ~ .page label[for="f-performatif"],
 #ap-demarche:focus-visible ~ .page label[for="ap-demarche"],
-#ap-moment:focus-visible ~ .page label[for="ap-moment"] {
+#ap-moment:focus-visible ~ .page label[for="ap-moment"], 
+#ap-presse:focus-visible ~ .page label[for="ap-presse"] {
   outline: 2px solid var(--noir);
   outline-offset: 3px;
 }
