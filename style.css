@@ -360,3 +360,99 @@ input[type="radio"] {
     transition: none !important;
   }
 }
+
+/* =========================================================
+   "EN CE MOMENT" : blocs texte + image
+   ========================================================= */
+
+.moment-titre {
+  margin: 0 0 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.bloc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 0 0 48px;
+}
+
+/* Variante : image à gauche, texte à droite */
+.bloc--inverse .bloc-texte {
+  order: 2;
+}
+
+.bloc-date {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.bloc-titre {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.bloc-texte p {
+  margin: 0 0 14px;
+}
+
+.bloc-texte .bloc-date {
+  margin: 0 0 4px;
+}
+
+.bloc-lien {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid var(--noir);
+}
+
+/* Image (ou lien-image) du bloc */
+.bloc-image {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  background: var(--gris-bloc);
+}
+
+/* Bloc image vide : un rectangle gris en attendant ta photo */
+.bloc-image:not(:has(img)) {
+  aspect-ratio: 4 / 3;
+}
+
+.sous-panel .bloc img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  transition: transform 0.5s ease;
+}
+
+/* Image cliquable : petit zoom au survol, comme la galerie */
+a.bloc-image:hover img,
+a.bloc-image:focus-visible img {
+  transform: scale(1.04);
+}
+
+a.bloc-image:focus-visible,
+.bloc-lien:focus-visible {
+  outline: 2px solid var(--noir);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .bloc {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bloc--inverse .bloc-texte {
+    order: 0;
+  }
+}
