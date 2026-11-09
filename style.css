@@ -446,6 +446,19 @@ a.bloc-image:focus-visible,
   outline-offset: 3px;
 }
 
+/* "Dans l'atelier" : titre, puis 2 colonnes d'images */
+.atelier {
+  margin: 0 0 48px;
+}
+
+.atelier .bloc-titre {
+  margin: 0 0 16px;
+}
+
+.atelier-images {
+  columns: 2;
+  column-gap: 8px;
+}
 
 /* Chaque image garde ses proportions : une photo verticale reste verticale */
 .atelier-image {
