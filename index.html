@@ -290,7 +290,7 @@ Cette perception n’est pas décorellée d’une certaine vision sociale du cha
           Je trouve beaucoup de satisfaction à voir les autres fiers de leur création, et si je devais résumer mon approche, je la décrirait comme une création de principes pour aider les autres dans leur projets</p>
       </div>
  
-       <!-- Sous-onglet : En ce moment -->
+     <!-- Sous-onglet : En ce moment -->
       <div class="sous-panel" id="sp-moment">
 
         <h3 class="moment-titre">Événements</h3>
@@ -329,18 +329,29 @@ Cette perception n’est pas décorellée d’une certaine vision sociale du cha
 
         <h3 class="moment-titre">Dans l’atelier</h3>
 
-        <!-- ===== MODÈLE "CE QUE JE FABRIQUE" (texte + image, sans lien) =====
-             Même principe : copie le bloc <article>...</article> pour en ajouter.
-             Pour mettre l'image : enlève le symbole de début et le symbole de fin
-             de commentaire autour de la ligne img. -->
-        <article class="bloc">
-          <div class="bloc-texte">
-            <h3 class="bloc-titre">Titre de ce que je fabrique</h3>
-            <p>Quelques lignes sur ce sur quoi je travaille en ce moment : matières, idées, étapes.</p>
+        <!-- ===== MODÈLE "CE QUE JE FABRIQUE" (titre + 2 colonnes d'images) =====
+             Pour ajouter un projet : copie tout le bloc <article>...</article>.
+             Pour ajouter des images : copie un <figure>...</figure> ; elles
+             se placent 2 par ligne, automatiquement.
+             Pour mettre une image : enlève le symbole de début et le symbole de
+             fin de commentaire autour de la ligne img. -->
+        <article class="atelier">
+          <h3 class="bloc-titre">Titre de ce que je fabrique</h3>
+
+          <div class="atelier-images">
+            <figure class="atelier-image">
+              <!-- <img src="images/atelier/photo-1.jpg" alt="Description de l'image"> -->
+            </figure>
+            <figure class="atelier-image">
+              <!-- <img src="images/atelier/photo-2.jpg" alt="Description de l'image"> -->
+            </figure>
+            <figure class="atelier-image">
+              <!-- <img src="images/atelier/photo-3.jpg" alt="Description de l'image"> -->
+            </figure>
+            <figure class="atelier-image">
+              <!-- <img src="images/atelier/photo-4.jpg" alt="Description de l'image"> -->
+            </figure>
           </div>
-          <figure class="bloc-image">
-            <!-- <img src="images/atelier/photo-1.jpg" alt="Description de l'image"> -->
-          </figure>
         </article>
 
       </div>
@@ -351,6 +362,7 @@ Cette perception n’est pas décorellée d’une certaine vision sociale du cha
       </div>
 
     </section>
+
 
     <!-- =====================================================
          CONTACTS
