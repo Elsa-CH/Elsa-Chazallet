@@ -446,11 +446,54 @@ a.bloc-image:focus-visible,
   outline-offset: 3px;
 }
 
+/* "Dans l'atelier" : titre, puis 2 colonnes d'images */
+.atelier {
+  margin: 0 0 48px;
+}
+
+.atelier .bloc-titre {
+  margin: 0 0 16px;
+}
+
+.atelier-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.atelier-image {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--gris-bloc);
+}
+
+/* Les images remplissent le cadre (rognées si besoin) pour des colonnes bien alignées */
+.sous-panel .atelier-images img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .atelier-images {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 700px) {
   .bloc {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
+  .bloc--inverse .bloc-texte {
+    order: 0;
+  }
+}
+
 
   .bloc--inverse .bloc-texte {
     order: 0;
