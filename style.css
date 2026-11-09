@@ -456,30 +456,33 @@ a.bloc-image:focus-visible,
 }
 
 .atelier-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  columns: 2;
+  column-gap: 8px;
 }
 
+/* Chaque image garde ses proportions : une photo verticale reste verticale */
 .atelier-image {
-  margin: 0;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
+  display: block;
+  margin: 0 0 8px;
+  break-inside: avoid;
   background: var(--gris-bloc);
 }
 
-/* Les images remplissent le cadre (rognées si besoin) pour des colonnes bien alignées */
+/* Bloc vide : un rectangle gris en attendant ta photo */
+.atelier-image:not(:has(img)) {
+  aspect-ratio: 4 / 3;
+}
+
 .sous-panel .atelier-images img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
-  object-fit: cover;
 }
 
 @media (max-width: 480px) {
   .atelier-images {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 }
 
@@ -488,12 +491,6 @@ a.bloc-image:focus-visible,
     grid-template-columns: 1fr;
     gap: 16px;
   }
-
-  .bloc--inverse .bloc-texte {
-    order: 0;
-  }
-}
-
 
   .bloc--inverse .bloc-texte {
     order: 0;
