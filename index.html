@@ -290,24 +290,67 @@ Cette perception n’est pas décorellée d’une certaine vision sociale du cha
           Je trouve beaucoup de satisfaction à voir les autres fiers de leur création, et si je devais résumer mon approche, je la décrirait comme une création de principes pour aider les autres dans leur projets</p>
       </div>
  
-      <!-- Sous-onglet : En ce moment -->
+       <!-- Sous-onglet : En ce moment -->
       <div class="sous-panel" id="sp-moment">
 
-      <p><strong>Les 10 ans du Bocal de Chemillé</strong></p>
-        Retrouvez un extrait de mon travail dans le hall du centre social le chemillois du 14 au 24 octobre 2026
-        <img src="images/Les10ansdubocal.png">
-        <p><strong>Biennale de l'orchidée du 6 au 8 novembre</strong> </p>
-        Je serai présente à la biénale de l'orchidée pour l'association Orchidée 91
-         <img src="images/Capture d'écran 2026-10-14 164335.png">
-        </div>
+        <h3 class="moment-titre">Événements</h3>
 
-             <div class="sous-panel" id="sp-presse">
+        <!-- ===== MODÈLE ÉVÉNEMENT (texte + image cliquable) =====
+             Pour en ajouter un : copie tout le bloc <article>...</article>.
+             bloc          = image à droite
+             bloc bloc--inverse = image à gauche (pour alterner)
+             Le lien est mis deux fois : sur l'image ET sous le texte.
+             Si l'événement n'a pas de lien, remplace <a class="bloc-image" ...>
+             par <figure class="bloc-image"> (et </a> par </figure>) et supprime
+             la ligne "Plus d'informations". -->
+        <article class="bloc">
+          <div class="bloc-texte">
+            <p class="bloc-date">14 – 24 octobre 2026 · Chemillé (49)</p>
+            <h3 class="bloc-titre">Les 10 ans du Bocal de Chemillé</h3>
+            <p>Retrouvez un extrait de mon travail dans le hall du centre social Le Chemillois.</p>
+            <a class="bloc-lien" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener">Plus d’informations →</a>
+          </div>
+          <a class="bloc-image" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener" aria-label="Plus d’informations : Les 10 ans du Bocal de Chemillé">
+            <img src="images/Les10ansdubocal.png" alt="Les 10 ans du Bocal de Chemillé">
+          </a>
+        </article>
 
-      
-        
+        <article class="bloc bloc--inverse">
+          <div class="bloc-texte">
+            <p class="bloc-date">6 – 8 novembre 2026</p>
+            <h3 class="bloc-titre">Biennale de l’orchidée</h3>
+            <p>Je serai présente à la biennale de l’orchidée pour l’association Orchidée 91.</p>
+            <a class="bloc-lien" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener">Plus d’informations →</a>
+          </div>
+          <a class="bloc-image" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener" aria-label="Plus d’informations : Biennale de l’orchidée">
+            <img src="images/Capture d'écran 2026-10-14 164335.png" alt="Biennale de l’orchidée">
+          </a>
+        </article>
+
+        <h3 class="moment-titre">Dans l’atelier</h3>
+
+        <!-- ===== MODÈLE "CE QUE JE FABRIQUE" (texte + image, sans lien) =====
+             Même principe : copie le bloc <article>...</article> pour en ajouter.
+             Pour mettre l'image : enlève le symbole de début et le symbole de fin
+             de commentaire autour de la ligne img. -->
+        <article class="bloc">
+          <div class="bloc-texte">
+            <h3 class="bloc-titre">Titre de ce que je fabrique</h3>
+            <p>Quelques lignes sur ce sur quoi je travaille en ce moment : matières, idées, étapes.</p>
+          </div>
+          <figure class="bloc-image">
+            <!-- <img src="images/atelier/photo-1.jpg" alt="Description de l'image"> -->
+          </figure>
+        </article>
+
       </div>
- 
-  </section>
+
+      <!-- Sous-onglet : Revue de presse (à remplir) -->
+      <div class="sous-panel" id="sp-presse">
+        <p>Revue de presse à venir.</p>
+      </div>
+
+    </section>
 
     <!-- =====================================================
          CONTACTS
