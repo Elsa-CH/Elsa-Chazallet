@@ -194,6 +194,23 @@ input[type="radio"] {
   display: none;
 }
 
+/* Images dans les sous-onglets : jamais plus larges que la colonne */
+.sous-panel img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 32px;
+}
+
+/* Bandeau temporaire (à supprimer avec la ligne dans index.html) */
+.construction {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 #ap-demarche:checked ~ .page #sp-demarche,
 #ap-moment:checked ~ .page #sp-moment,
 #ap-presse:checked ~ .page #sp-presse {
@@ -205,32 +222,32 @@ input[type="radio"] {
    ========================================================= */
 
 .grid {
-  column-count: 4;
-  column-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
-@media (max-width: 900px) { .grid { column-count: 2; } }
-.card {
-   
-  position: relative;
-  display: block;
-  margin-bottom: 8px;
-  break-inside: avoid;
-  overflow: hidden;
-  background: var(--gris-bloc);
-  text-decoration: none;
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabs,
+  .chips,
+  .panel-texte {
+    width: 100%;
+  }
+
+  .tabs {
+    gap: 12px;
+  }
 }
 
-@media (max-width: 480px) { .grid { column-count: 1; } }
-
-.card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-
 
 /* =========================================================
    CARTES (un projet = un lien vers son URL)
@@ -240,7 +257,7 @@ input[type="radio"] {
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 6 / 5;
   background: var(--gris-bloc);
   text-decoration: none;
 }
@@ -349,7 +366,7 @@ input[type="radio"] {
 #f-design:focus-visible ~ .page label[for="f-design"],
 #f-performatif:focus-visible ~ .page label[for="f-performatif"],
 #ap-demarche:focus-visible ~ .page label[for="ap-demarche"],
-#ap-moment:focus-visible ~ .page label[for="ap-moment"], 
+#ap-moment:focus-visible ~ .page label[for="ap-moment"],
 #ap-presse:focus-visible ~ .page label[for="ap-presse"] {
   outline: 2px solid var(--noir);
   outline-offset: 3px;
@@ -358,6 +375,111 @@ input[type="radio"] {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+  }
+}
+
+/* =========================================================
+   PAGE PROJET
+   (utilisée par tous les fichiers du dossier "projets/")
+   ========================================================= */
+
+/* L'en-tête est un lien vers l'accueil */
+a.header-image {
+  display: block;
+}
+
+/* Bloc de texte, centré comme les onglets */
+.projet {
+  width: 72%;
+  max-width: 940px;
+  margin: 46px auto 40px;
+}
+
+.retour {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.retour:hover,
+.retour:focus-visible {
+  border-bottom-color: var(--noir);
+}
+
+.projet-titre {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.projet-meta {
+  margin: 0 0 28px;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.projet-texte p {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+}
+
+/* Images et vidéos : 2 par ligne, ou 1 en pleine largeur (.large) */
+.projet-medias {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.media {
+  margin: 0;
+  aspect-ratio: 3 / 2;
+  background: var(--gris-bloc);
+}
+
+.media.large {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Dès qu'une image est placée, le bloc prend sa taille naturelle */
+.media:has(img) {
+  aspect-ratio: auto;
+  background: none;
+}
+
+/* Vidéo YouTube / Vimeo */
+.media iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.media-legende {
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .projet {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .projet-medias {
+    grid-template-columns: 1fr;
   }
 }
 
