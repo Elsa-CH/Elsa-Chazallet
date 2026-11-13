@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Passe-dessin — Elsa Chazallet</title>
-  <meta name="description" content="Passe-dessin : projet visuel, design d'Elsa Chazallet.">
+  <title>Titre du projet — Elsa Chazallet</title>
+  <meta name="description" content="Description courte du projet (elle apparaît dans Google).">
 
   <link rel="icon" href="/icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/icon.png">
@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- ../ = on remonte d'un dossier, puisque cette page est dans "projets/" -->
+  <!-- ../ = on remonte d'un dossier : la page est dans un sous-dossier -->
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -25,45 +25,47 @@
       <img src="../images/elsachazallet.svg" alt="Elsa Chazallet">
     </a>
 
-    <main>
+    <main class="fiche">
 
-      <!-- TEXTE DU PROJET -->
-      <article class="projet">
-        <a class="retour" href="../index.html">← Retour à la galerie</a>
+      <a class="retour" href="../index.html">&lt;&lt; Retour</a>
+      <h1 class="fiche-titre">Titre du projet</h1>
+      <p class="fiche-annee">2026</p>
 
-        <h1 class="projet-titre">Passe-dessin</h1>
-        <p class="projet-meta">Visuel, Design</p>
-
-        <div class="projet-texte">
-          <!-- À REMPLIR : texte de présentation du projet -->
-          <p>Texte de présentation à venir.</p>
+      <!-- RANGÉE 1 : texte d'introduction -->
+      <section class="rang rang--texte">
+        <div class="rang-texte">
+          <p>Texte de présentation du projet : contexte, démarche, matériaux, collaborations.</p>
+          <p>Un second paragraphe, si besoin. Chaque balise p est un paragraphe.</p>
         </div>
-      </article>
+      </section>
 
-      <!-- IMAGES ET VIDÉOS
-           class="media large" = pleine largeur, class="media" = demi-largeur.
-           Pour supprimer un bloc, supprime tout le <figure>...</figure>. -->
-      <div class="projet-medias">
-
-        <figure class="media large">
-          <img src="../images/PasseDessinPerriand/3.jpg" alt="Passe-dessin Perriand">
+      <!-- RANGÉE 2 : mosaïque. Change grille--3 en grille--1, grille--2 ou grille--4 pour un autre agencement (voir En ce moment) -->
+      <div class="grille grille--3">
+        <figure class="cell">
+          <!-- <img src="../images/DOSSIER/photo-1.webp" alt="Description de l'image"> -->
         </figure>
-
-        <figure class="media">
-          <!-- <img src="../images/DOSSIER/image-2.jpg" alt="Description de l'image"> -->
+        <figure class="cell">
+          <!-- <img src="../images/DOSSIER/photo-2.webp" alt="Description de l'image"> -->
         </figure>
-
-        <figure class="media">
-          <!-- <img src="../images/DOSSIER/image-3.jpg" alt="Description de l'image"> -->
+        <figure class="cell">
+          <!-- <img src="../images/DOSSIER/photo-3.webp" alt="Description de l'image"> -->
         </figure>
-
-        <!-- Exemple de vidéo YouTube (remplace VIDEO_ID par la fin du lien) :
-        <figure class="media large">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Titre de la vidéo" allowfullscreen></iframe>
-        </figure>
-        -->
-
       </div>
+
+      <!-- RANGÉE 3 : 2 images hautes à gauche, texte à droite -->
+      <section class="rang rang--deux-texte">
+        <figure class="fig">
+          <!-- <img src="../images/DOSSIER/photo-4.webp" alt="Description de l'image"> -->
+        </figure>
+        <figure class="fig">
+          <!-- <img src="../images/DOSSIER/photo-5.webp" alt="Description de l'image"> -->
+        </figure>
+        <div class="rang-texte">
+          <p>Texte de présentation du projet : contexte, démarche, matériaux, collaborations.</p>
+          <p>Un second paragraphe, si besoin. Chaque balise p est un paragraphe.</p>
+        </div>
+      </section>
+
 
     </main>
 
