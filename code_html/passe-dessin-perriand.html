@@ -18,6 +18,31 @@
 </head>
 <body>
 
+  <!--
+    MODE D'EMPLOI (à supprimer quand ta page est finie)
+
+    Une page projet = le titre + des RANGÉES empilées dans l'ordre de ton choix.
+    Chaque rangée est un bloc <section class="rang rang--NOM"> ... </section>.
+    Copie, colle, déplace ou supprime des rangées librement.
+
+    Noms disponibles :
+      rang--image-texte  grande image à gauche, texte à droite
+      rang--texte-image  texte à gauche, grande image à droite
+      rang--texte-deux   texte à gauche, 2 images hautes à droite
+      rang--deux-texte   2 images hautes à gauche, texte à droite
+      rang--pleine       1 image pleine largeur
+      rang--deux         2 images côte à côte
+      rang--trois        3 images côte à côte
+      rang--texte        texte seul
+      rang--video        vidéo YouTube ou Vimeo
+      rang--audio        lecteur SoundCloud ou Bandcamp
+
+    Pour mettre une image : dans la ligne img, retire le symbole de début et le
+    symbole de fin de commentaire, et indique ton fichier.
+    Proportions d'UNE image : class="fig ratio-portrait" (ou ratio-paysage,
+    ratio-carre, ratio-large, ratio-panorama, ratio-libre = sans rognage).
+  -->
+
   <div class="page">
 
     <!-- EN-TÊTE : cliquable, ramène à l'accueil -->
@@ -28,45 +53,65 @@
     <main class="fiche">
 
       <a class="retour" href="../index.html">&lt;&lt; Retour</a>
-      <h1 class="fiche-titre">Titre du projet</h1>
-      <p class="fiche-annee">2026</p>
+      <h1 class="fiche-titre">Le passe dessin - Perriand</h1>
+      <p class="fiche-annee">2024</p>
 
-      <!-- RANGÉE 1 : texte d'introduction -->
-      <section class="rang rang--texte">
+      <!-- RANGÉE 1 : grande image à gauche, texte à droite -->
+      <section class="rang rang--image-texte">
+        <figure class="fig">
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (1).webp">
+        </figure>
         <div class="rang-texte">
-          <p>Texte de présentation du projet : contexte, démarche, matériaux, collaborations.</p>
-          <p>Un second paragraphe, si besoin. Chaque balise p est un paragraphe.</p>
+          <p>Dans le "passe-dessin" chaque participant
+reproduit le dessin transmis par la personne précédente. L’objet présenté ci à
+droite est une interprétation en 3 dimension du dixième dessin de la chaîne de
+transmission.</p>
+<p>
+  Ici, le sujet initial à reproduire était la
+chaise longue de charlotte Perriand, objet
+iconique du design.
+Je me suis baladée dans la ville d'Angers,
+pour faire participer diverses personnes</p>
+         <p> Je vous invite à voir les autres objets issus de ce procédé: </p>
+          <p><a href="passe-dessin-brancusi.html"> >> ici le passe dessin autour de Brancusi </a> </p>
+          <p><a href="passe-dessin-sotsass.html"> >> ici le passe dessin autour de d'Ettore Sotsass </a> </p>
         </div>
       </section>
 
-      <!-- RANGÉE 2 : mosaïque. Change grille--3 en grille--1, grille--2 ou grille--4 pour un autre agencement (voir En ce moment) -->
-      <div class="grille grille--3">
-        <figure class="cell">
-          <!-- <img src="../images/DOSSIER/photo-1.webp" alt="Description de l'image"> -->
-        </figure>
-        <figure class="cell">
-          <!-- <img src="../images/DOSSIER/photo-2.webp" alt="Description de l'image"> -->
-        </figure>
-        <figure class="cell">
-          <!-- <img src="../images/DOSSIER/photo-3.webp" alt="Description de l'image"> -->
-        </figure>
-      </div>
-
-      <!-- RANGÉE 3 : 2 images hautes à gauche, texte à droite -->
-      <section class="rang rang--deux-texte">
+      <!-- RANGÉE 2 : texte à gauche, 2 images hautes à droite -->
+      <section class="rang rang--trois">
+  
         <figure class="fig">
-          <!-- <img src="../images/DOSSIER/photo-4.webp" alt="Description de l'image"> -->
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (2).webp" alt="Description de l'image">
         </figure>
         <figure class="fig">
-          <!-- <img src="../images/DOSSIER/photo-5.webp" alt="Description de l'image"> -->
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (4).webp" alt="Description de l'image">
         </figure>
-        <div class="rang-texte">
-          <p>Texte de présentation du projet : contexte, démarche, matériaux, collaborations.</p>
-          <p>Un second paragraphe, si besoin. Chaque balise p est un paragraphe.</p>
-        </div>
+        <figure class="fig">
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (6).webp" alt="Description de l'image">
+          </figure>
       </section>
-
-
+      
+<section class="rang rang--trois">
+  
+        <figure class="fig">
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (8).webp" alt="Description de l'image">
+        </figure>
+        <figure class="fig">
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (9).webp" alt="Description de l'image">
+        </figure>
+        <figure class="fig">
+          <img src="../images/passe-dessin_perriand/passe-dessin_perriand (11).webp" alt="Description de l'image">
+          </figure>
+      </section>
+      <p>Voici une vidéo rendant compte de l'expérience menée dans la ville d'Angers.<br>
+      Les gens sont plutôt enthousiastes à l'idée de participer au passe-dessin!</P>
+      
+      <section class="rang rang--video">
+        
+      </section>
+      
+     
     </main>
 
   </div>
