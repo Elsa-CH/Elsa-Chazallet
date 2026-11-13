@@ -609,7 +609,7 @@ a.evenement-affiche:focus-visible {
   background: var(--gris-bloc);
 }
 
-.sous-panel .grille img {
+.grille img {
   position: absolute;
   inset: 0;
   display: block;
@@ -669,5 +669,216 @@ a.evenement-affiche:focus-visible {
     grid-column: auto !important;
     grid-row: auto !important;
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* =========================================================
+   PAGES PROJET : MODÈLES
+   Une page = un titre + des "rangées" (class="rang rang--...")
+   que tu empiles dans l'ordre que tu veux.
+   ========================================================= */
+
+.fiche {
+  width: 72%;
+  max-width: 940px;
+  margin: 46px auto 0;
+}
+
+/* Lien "<< Retour" toujours souligné */
+.fiche .retour {
+  margin-bottom: 24px;
+  border-bottom-color: var(--noir);
+}
+
+.fiche-titre {
+  margin: 0 0 4px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.fiche-annee {
+  margin: 0 0 32px;
+  font-size: 1.15rem;
+  font-weight: 300;
+}
+
+/* ---------- Rangées ---------- */
+
+.rang {
+  --ratio: 4 / 3;               /* proportion des images de la rangée */
+  display: grid;
+  gap: 12px;
+  align-items: start;
+  margin: 0 0 32px;
+}
+
+/* image à gauche (large) + texte à droite */
+.rang--image-texte {
+  --ratio: 3 / 2;
+  grid-template-columns: 1.47fr 1fr;
+  gap: 14px;
+}
+
+/* texte à gauche + image à droite (large) */
+.rang--texte-image {
+  --ratio: 3 / 2;
+  grid-template-columns: 1fr 1.47fr;
+  gap: 14px;
+}
+
+/* texte à gauche + 2 images hautes à droite */
+.rang--texte-deux {
+  --ratio: 3 / 4;
+  grid-template-columns: 1.37fr 1fr 1fr;
+  gap: 11px;
+}
+
+/* 2 images hautes à gauche + texte à droite */
+.rang--deux-texte {
+  --ratio: 3 / 4;
+  grid-template-columns: 1fr 1fr 1.37fr;
+  gap: 11px;
+}
+
+/* 1 image pleine largeur */
+.rang--pleine {
+  --ratio: 16 / 9;
+  grid-template-columns: 1fr;
+}
+
+/* 2 images côte à côte */
+.rang--deux {
+  --ratio: 4 / 3;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 images côte à côte */
+.rang--trois {
+  --ratio: 1 / 1;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* texte seul */
+.rang--texte {
+  grid-template-columns: 1fr;
+  max-width: 700px;
+}
+
+/* vidéo pleine largeur (YouTube, Vimeo) */
+.rang--video {
+  --ratio: 16 / 9;
+  grid-template-columns: 1fr;
+}
+
+/* lecteur audio (SoundCloud, Bandcamp...) */
+.rang--audio {
+  grid-template-columns: 1fr;
+}
+
+.rang--audio iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+/* ---------- Texte d'une rangée ---------- */
+
+.rang-texte {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.rang-texte p {
+  margin: 0 0 10px;
+}
+
+.rang-texte p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Image d'une rangée ---------- */
+
+.fig {
+  position: relative;
+  aspect-ratio: var(--ratio);
+  margin: 0;
+  overflow: hidden;
+  background: var(--gris-bloc);
+}
+
+.fig img,
+.fig iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  object-fit: cover;
+}
+
+/* Changer les proportions d'UNE image : class="fig ratio-portrait" */
+.ratio-paysage  { --ratio: 3 / 2; }
+.ratio-portrait { --ratio: 3 / 4; }
+.ratio-carre    { --ratio: 1 / 1; }
+.ratio-large    { --ratio: 16 / 9; }
+.ratio-panorama { --ratio: 21 / 9; }
+
+/* Image entière, sans rognage : class="fig ratio-libre" */
+.fig.ratio-libre {
+  aspect-ratio: auto;
+}
+
+.fig.ratio-libre img {
+  position: static;
+  height: auto;
+}
+
+/* Grille 3x2 (voir "En ce moment") utilisée dans une page projet */
+.fiche .grille {
+  margin: 0 0 32px;
+}
+
+/* ---------- Téléphone ---------- */
+
+@media (max-width: 900px) {
+  .fiche {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .rang--image-texte,
+  .rang--texte-image {
+    grid-template-columns: 1fr;
+  }
+
+  /* texte en haut sur toute la largeur, les 2 images en dessous */
+  .rang--texte-deux,
+  .rang--deux-texte {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rang--texte-deux .rang-texte,
+  .rang--deux-texte .rang-texte {
+    grid-column: 1 / -1;
+  }
+
+  .rang--deux-texte .rang-texte {
+    order: -1;
+  }
+
+  .rang--trois {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .rang--deux {
+    grid-template-columns: 1fr;
   }
 }
