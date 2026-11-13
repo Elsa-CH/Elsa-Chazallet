@@ -293,92 +293,120 @@ Cette perception n’est pas décorellée d’une certaine vision sociale du cha
      <!-- Sous-onglet : En ce moment -->
       <div class="sous-panel" id="sp-moment">
 
-        <h3 class="moment-titre">Événements</h3>
+        <!-- =====================================================
+             UN ÉVÉNEMENT = un bloc <article class="moment"> ... </article>
+             Il contient 2 modèles :
+               1. "evenement"      : titre, date, affiche, description, image
+               2. "quelques-images" : titre, texte, grille d'images
 
-        <!-- ===== MODÈLE ÉVÉNEMENT (texte + image cliquable) =====
-             Pour en ajouter un : copie tout le bloc <article>...</article>.
-             bloc          = image à droite
-             bloc bloc--inverse = image à gauche (pour alterner)
-             Le lien est mis deux fois : sur l'image ET sous le texte.
-             Si l'événement n'a pas de lien, remplace <a class="bloc-image" ...>
-             par <figure class="bloc-image"> (et </a> par </figure>) et supprime
-             la ligne "Plus d'informations". -->
-       
+             POUR AJOUTER UN ÉVÉNEMENT : copie le bloc entier et change les textes.
+             POUR LE LIEN : l'affiche est cliquable (href). Si l'événement n'a pas
+             de lien, remplace <a class="evenement-affiche" ...> par
+             <figure class="evenement-affiche"> et </a> par </figure>.
 
-        <article class="bloc bloc--inverse">
-          <div class="bloc-texte">
-            <p class="bloc-date">6 – 8 novembre 2026</p>
-            <h3 class="bloc-titre">Biennale de l’orchidée</h3>
-            <p>Je serai présente à la biennale de l’orchidée pour l’association Orchidée 91.</p>
-            <a class="bloc-lien" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener">Plus d’informations →</a>
-          </div>
-          <a class="bloc-image" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener" aria-label="Plus d’informations : Biennale de l’orchidée">
-            <img src="images/Capture d'écran 2026-10-14 164335.png" alt="Biennale de l’orchidée">
-          </a>
+             AGENCEMENT DE LA GRILLE : change le numéro dans class="grille grille--3"
+               grille--1 : 6 images de même taille (3 colonnes x 2 lignes)
+               grille--2 : 4 images (1 haute à gauche, 2 en haut, 1 large en bas)
+               grille--3 : 3 images (2 empilées à gauche, 1 grande à droite)
+               grille--4 : 4 images (1 large en haut à gauche, 2 en bas, 1 haute à droite)
+             Les images se placent dans l'ordre où tu les écris.
+
+             AGENCEMENT LIBRE : enlève le numéro (class="grille") et ajoute aux
+             images : class="cell c2" (2 colonnes de large), class="cell r2"
+             (2 lignes de haut), class="cell c2 r2" (les deux), ou class="cell c3"
+             (toute la largeur).
+             ===================================================== -->
+
+        <!-- ==================== ÉVÉNEMENT 1 ==================== -->
+        <article class="moment">
+
+          <section class="evenement">
+            <h3 class="evenement-titre">Biennale de l’orchidée</h3>
+            <p class="evenement-date">6 – 8 novembre 2026</p>
+
+            <div class="evenement-corps">
+
+              <!-- Affiche (cliquable) -->
+              <a class="evenement-affiche" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener" aria-label="Plus d’informations : Biennale de l’orchidée">
+                <img src="images/Capture d'écran 2026-10-14 164335.png" alt="Affiche de la Biennale de l’orchidée">
+              </a>
+
+              <div class="evenement-droite">
+                <div class="evenement-description">
+                  <p>Je serai présente à la biennale de l’orchidée pour l’association Orchidée 91.</p>
+                </div>
+
+                <!-- Image sous la description -->
+                <figure class="evenement-photo">
+                  <img src="images/BiénaleOrchidée2026/IMG_4929.webp" alt="Stand à la biennale de l’orchidée">
+                </figure>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="quelques-images">
+            <h3 class="evenement-titre">Quelques images…</h3>
+            <p>Voici le stand que j’ai minutieusement agencé pour cette magnifique réunion de passionnés d’orchidée. J’y ai notamment présenté un récent travail réalisé à l’imprimante 3D : des orchidées factices plus vraies que nature, en attendant la floraison, si difficile à obtenir parfois. Vous pouvez me contacter si vous êtes intéressé pour en acquérir une personnalisée.</p>
+
+            <div class="grille grille--3">
+              <figure class="cell">
+                <img src="images/BiénaleOrchidée2026/IMG_4921.webp" alt="Biennale de l’orchidée, photo 2">
+              </figure>
+              <figure class="cell">
+                <img src="images/BiénaleOrchidée2026/IMG_4847.webp" alt="Biennale de l’orchidée, photo 3">
+              </figure>
+              <figure class="cell">
+                <img src="images/BiénaleOrchidée2026/IMG_4945.webp" alt="Biennale de l’orchidée, photo 4">
+              </figure>
+            </div>
+          </section>
+
         </article>
 
-        <h3 class="moment-titre">Biennale de l'orchidée</h3>
+        <!-- ==================== ÉVÉNEMENT 2 ==================== -->
+        <article class="moment">
 
-        <!-- ===== MODÈLE "CE QUE JE FABRIQUE" (titre + 2 colonnes d'images) =====
-             Pour ajouter un projet : copie tout le bloc <article>...</article>.
-             Pour ajouter des images : copie un <figure>...</figure> ; elles
-             se placent 2 par ligne, automatiquement.
-             Pour mettre une image : enlève le symbole de début et le symbole de
-             fin de commentaire autour de la ligne img. -->
-        <article class="atelier">
-          <h3 class="bloc-titre">Quelques images...</h3>
-          <p> Voici le stand que j'ai minutieusement agencé pour cette maginifique réunion de passionnés d'orchidée.<br>
-          j'y ai notamment présenté un récent travail réalisé à l'imprimante 3D. Orchidées factices plus vraies que nature, en attendant la floraison, si difficile à obtenir parfois.
-          Vous pouvez me contacter si vous êtes interessé pour en acquerir une personnalisée. </p>
+          <section class="evenement">
+            <h3 class="evenement-titre">Les 10 ans du Bocal de Chemillé</h3>
+            <p class="evenement-date">14 – 24 octobre 2026 · Chemillé (49)</p>
 
-          <div class="atelier-images">
-            <figure class="atelier-image">
-              <img src="images/BiénaleOrchidée2026/IMG_4929.webp" alt="Description de l'image">
-            </figure>
-            <figure class="atelier-image">
-            <img src="images/BiénaleOrchidée2026/IMG_4921.webp" alt="Description de l'image">
-            </figure>
-            <figure class="atelier-image">
-            <img src="images/BiénaleOrchidée2026/IMG_4847.webp" alt="Description de l'image">
-            </figure>
-            <figure class="atelier-image">
-              <img src="images/BiénaleOrchidée2026/IMG_4945.webp" alt="Description de l'image">
-            </figure>
-          </div>
+            <div class="evenement-corps">
+
+              <a class="evenement-affiche" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener" aria-label="Plus d’informations : Les 10 ans du Bocal de Chemillé">
+                <img src="images/Les10ansdubocal.png" alt="Affiche des 10 ans du Bocal de Chemillé">
+              </a>
+
+              <div class="evenement-droite">
+                <div class="evenement-description">
+                  <p>Retrouvez un extrait de mon travail dans le hall du centre social Le Chemillois.</p>
+                </div>
+
+                <figure class="evenement-photo">
+                  <img src="images/BocalExpo2026/1000045360.webp" alt="Exposition au centre social Le Chemillois">
+                </figure>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="quelques-images">
+            <h3 class="evenement-titre">Quelques images…</h3>
+            <p>J’ai pu présenter une partie de mon récent travail au centre social Le Chemillois, du 14 au 24 octobre. Cet événement a aussi été l’occasion pour moi de réaliser des ateliers de fabrication de tampons, au Bocal, le fablab de Chemillé.</p>
+
+            <!-- Agencement libre : une image haute à gauche, une grande à droite -->
+            <div class="grille">
+              <figure class="cell r2">
+                <img src="images/BocalExpo2026/IMG_4729.webp" alt="Les 10 ans du Bocal, photo 2">
+              </figure>
+              <figure class="cell c2 r2">
+                <img src="images/BocalExpo2026/IMG_4732.webp" alt="Les 10 ans du Bocal, photo 3">
+              </figure>
+            </div>
+          </section>
+
         </article>
-             
-          <article class="bloc">
-          <div class="bloc-texte">
-            <p class="bloc-date">14 – 24 octobre 2026 · Chemillé (49)</p>
-            <h3 class="bloc-titre">Les 10 ans du Bocal de Chemillé</h3>
-            <p>Retrouvez un extrait de mon travail dans le hall du centre social Le Chemillois.</p>
-            <a class="bloc-lien" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener">Plus d’informations →</a>
-          </div>
-          <a class="bloc-image" href="https://URL-DE-L-EVENEMENT" target="_blank" rel="noopener" aria-label="Plus d’informations : Les 10 ans du Bocal de Chemillé">
-            <img src="images/Les10ansdubocal.png" alt="Les 10 ans du Bocal de Chemillé">
-          </a>
-        </article>
 
-          <h3 class="moment-titre">10 ans du bocal</h3>
-        <article class="atelier">
-          <h3 class="bloc-titre">Quelques images...</h3>
-          <p> J'ai pu présenter une partie de mon récent travail au centre social du Chemillois, du 14 au 24 octobre. 
-            Cet événelent a aussi été l'occasion pour moi de réaliser des ateliers de fabrication de tampon, au Bocal, le fablab de chemillé </p>
-
-          <div class="atelier-images">
-            <figure class="atelier-image">
-              <img src="images/BocalExpo2026/1000045360.webp" alt="Description de l'image">
-            </figure>
-            <figure class="atelier-image">
-            <img src="images/BocalExpo2026/IMG_4729.webp" alt="Description de l'image">
-            </figure>
-            <figure class="atelier-image">
-            <img src="images/BocalExpo2026/IMG_4732.webp">
-            </figure>
-          
-          </div>
-        </article>
-        
       </div>
 
       <!-- Sous-onglet : Revue de presse (à remplir) -->
@@ -387,6 +415,8 @@ Cette perception n’est pas décorellée d’une certaine vision sociale du cha
       </div>
 
     </section>
+
+    
 
 
     <!-- =====================================================
