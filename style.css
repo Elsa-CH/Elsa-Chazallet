@@ -882,3 +882,10 @@ a.evenement-affiche:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+.card:has(img),
+.fig:has(img),
+.cell:has(img),
+.evenement-affiche:has(img),
+.evenement-photo:has(img) {
+  background: none;
+}
