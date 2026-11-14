@@ -679,8 +679,8 @@ a.evenement-affiche:focus-visible {
    ========================================================= */
 
 .fiche {
-  width: 72%;
-  max-width: 940px;
+  width: 90%;
+  max-width: 1200px;
   margin: 46px auto 0;
 }
 
