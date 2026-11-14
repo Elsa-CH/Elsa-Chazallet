@@ -760,6 +760,12 @@ a.evenement-affiche:focus-visible {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* 5 images côte à côte */
+.rang--cinq {
+  --ratio: 1 / 1;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 /* texte seul */
 .rang--texte {
   grid-template-columns: 1fr;
