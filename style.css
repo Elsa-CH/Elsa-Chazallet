@@ -919,17 +919,19 @@ a.evenement-affiche:focus-visible {
   background-color: #d3d5d7;
 }
 
-/* Rail de 17 images = 1700% */
+/* Rail flexible qui ne se laisse jamais compresser */
 .slides {
   display: flex;
-  width: 1700%;
+  width: 100%;
   height: 100%;
+  max-width: none !important;
   transition: transform 0.5s ease-in-out;
 }
 
-/* Chaque slide occupe 1/17e du rail */
+/* Chaque image prend exactement 100% de la largeur du carré sans rétrécir */
 .slide {
-  width: calc(100% / 17);
+  flex: 0 0 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -996,23 +998,23 @@ a.evenement-affiche:focus-visible {
 }
 
 /* --- DÉFILEMENT DES 17 IMAGES --- */
-#slide1:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 0 / 17)); }
-#slide2:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 1 / 17)); }
-#slide3:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 2 / 17)); }
-#slide4:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 3 / 17)); }
-#slide5:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 4 / 17)); }
-#slide6:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 5 / 17)); }
-#slide7:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 6 / 17)); }
-#slide8:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 7 / 17)); }
-#slide9:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 8 / 17)); }
-#slide10:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 9 / 17)); }
-#slide11:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 10 / 17)); }
-#slide12:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 11 / 17)); }
-#slide13:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 12 / 17)); }
-#slide14:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 13 / 17)); }
-#slide15:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 14 / 17)); }
-#slide16:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 15 / 17)); }
-#slide17:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 16 / 17)); }
+#slide1:checked ~ .diaporama .slides  { transform: translateX(0%); }
+#slide2:checked ~ .diaporama .slides  { transform: translateX(-100%); }
+#slide3:checked ~ .diaporama .slides  { transform: translateX(-200%); }
+#slide4:checked ~ .diaporama .slides  { transform: translateX(-300%); }
+#slide5:checked ~ .diaporama .slides  { transform: translateX(-400%); }
+#slide6:checked ~ .diaporama .slides  { transform: translateX(-500%); }
+#slide7:checked ~ .diaporama .slides  { transform: translateX(-600%); }
+#slide8:checked ~ .diaporama .slides  { transform: translateX(-700%); }
+#slide9:checked ~ .diaporama .slides  { transform: translateX(-800%); }
+#slide10:checked ~ .diaporama .slides { transform: translateX(-900%); }
+#slide11:checked ~ .diaporama .slides { transform: translateX(-1000%); }
+#slide12:checked ~ .diaporama .slides { transform: translateX(-1100%); }
+#slide13:checked ~ .diaporama .slides { transform: translateX(-1200%); }
+#slide14:checked ~ .diaporama .slides { transform: translateX(-1300%); }
+#slide15:checked ~ .diaporama .slides { transform: translateX(-1400%); }
+#slide16:checked ~ .diaporama .slides { transform: translateX(-1500%); }
+#slide17:checked ~ .diaporama .slides { transform: translateX(-1600%); }
 
 /* --- GESTION DES 17 PAIRES DE FLÈCHES --- */
 .fleches {
