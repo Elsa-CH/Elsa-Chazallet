@@ -895,3 +895,48 @@ a.evenement-affiche:focus-visible {
 .evenement-photo:has(img) {
   background: none;
 }
+/* =========================================================
+   DIAPORAMA  BOUTIQUE
+   ========================================================= */
+
+/* Conteneur principal du diaporama */
+.slider-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Piste qui contient les slides alignées horizontalement */
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Force l'arrêt net sur chaque slide */
+  scroll-behavior: smooth;      /* Défilement fluide */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Masquer la barre de défilement pour un rendu propre */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.slider {
+  -ms-overflow-style: none;  /* IE et Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Chaque slide prend 100% de la largeur du conteneur */
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start; /* Ancrage au début de chaque slide */
+}
+
+.slide img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
