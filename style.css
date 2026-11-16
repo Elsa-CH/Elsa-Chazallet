@@ -899,11 +899,11 @@ a.evenement-affiche:focus-visible {
    DIAPORAMA  BOUTIQUE
    ========================================================= */
 
-/* Conteneur global qui englobe le carré + les flèches extérieures */
+/* Conteneur global */
 .diaporama-wrapper {
   position: relative;
-  width: 400px; /* Taille du carré */
-  max-width: 80vw; /* Responsive sur mobile */
+  width: 400px;
+  max-width: 75vw; /* Laisse de la place pour les flèches sur mobile */
   margin: 0 auto;
 }
 
@@ -911,27 +911,28 @@ a.evenement-affiche:focus-visible {
   display: none;
 }
 
-/* Le carré qui contient les images */
+/* Carré d'affichage */
 .diaporama {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background-color: #d3d5d7; /* Fond gris par défaut si image en chargement */
+  background-color: #d3d5d7;
 }
 
+/* Rail de 17 images = 1700% */
 .slides {
   display: flex;
-  width: 300%; /* 100% par image (3 images = 300%) */
+  width: 1700%;
   height: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
+/* Chaque slide occupe 1/17e du rail */
 .slide {
-  width: 33.3333%;
+  width: calc(100% / 17);
   height: 100%;
 }
 
-/* Lien cliquable vers la page d'achat */
 .slide-card {
   position: relative;
   display: block;
@@ -947,14 +948,14 @@ a.evenement-affiche:focus-visible {
   display: block;
 }
 
-/* --- NOUVEL OVERLAY SPÉCIAL DIAPORAMA --- */
+/* --- OVERLAY SPÉCIAL DIAPORAMA --- */
 .slide-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Aligne en bas */
-  align-items: flex-end;     /* Aligne à droite comme sur votre maquette */
+  justify-content: flex-end;
+  align-items: flex-end;
   text-align: right;
   padding: 20px;
   background: rgba(0, 0, 0, 0.45);
@@ -976,7 +977,7 @@ a.evenement-affiche:focus-visible {
 
 .slide-title {
   margin: 0;
-  color: var(--blanc, #ffffff); /* Utilise votre variable ou blanc par défaut */
+  color: var(--blanc, #ffffff);
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.25;
@@ -989,17 +990,12 @@ a.evenement-affiche:focus-visible {
   transform: none;
 }
 
-/* Écrans tactiles : texte toujours visible */
 @media (hover: none) {
-  .slide-overlay {
-    opacity: 1;
-  }
-  .slide-title {
-    transform: none;
-  }
+  .slide-overlay { opacity: 1; }
+  .slide-title { transform: none; }
 }
 
-/* --- DÉFILEMENT ET FLÈCHES EXTÉRIEURES --- */
+/* --- DÉFILEMENT DES 17 IMAGES --- */
 #slide1:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 0 / 17)); }
 #slide2:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 1 / 17)); }
 #slide3:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 2 / 17)); }
@@ -1018,6 +1014,7 @@ a.evenement-affiche:focus-visible {
 #slide16:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 15 / 17)); }
 #slide17:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 16 / 17)); }
 
+/* --- GESTION DES 17 PAIRES DE FLÈCHES --- */
 .fleches {
   display: none;
 }
@@ -1050,7 +1047,7 @@ a.evenement-affiche:focus-visible {
   height: 45px;
   background-color: #000000;
   color: #ffffff;
-  border-radius: 50%; /* Rond parfait */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1065,6 +1062,6 @@ a.evenement-affiche:focus-visible {
   transform: translateY(-50%) scale(1.08);
 }
 
-/* Positionnement à l'extérieur du carré */
 .prev { left: -65px; }
 .next { right: -65px; }
+
