@@ -4,16 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cymbidium bordeau — Boutique — Elsa Chazallet</title>
-  <meta name="Cymbidium bordeau" content="Orchidée aimantée imprimée en 3D et peinte à la main">
+  <meta name="description" content="Cymbidium bordeau : orchidée aimantée imprimée en 3D et peinte à la main.">
 
-  <link rel="icon" href="images/BiénaleOrchidée2026/orchidée (1).webp" type="image/png">
-  <link rel="apple-touch-icon" href="images/BiénaleOrchidée2026/orchidée (1).webp">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../style.css">
+
+  <!-- Mise en forme des options (tige, livraison). Propre à cette page. -->
+  <style>
+    .options { border: 0; margin: 1.5rem 0 1rem; padding: 0; }
+    .options legend { font-weight: 500; margin-bottom: .6rem; padding: 0; }
+    .options + .options { margin-top: 1.2rem; }
+    .option {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .75rem 1rem; margin-bottom: .5rem;
+      border: 1px solid var(--noir, #000);
+      cursor: pointer;
+    }
+    .option input { width: 1.1rem; height: 1.1rem; accent-color: var(--noir, #000); flex: none; }
+    .option span { flex: 1; }
+    .option strong { font-weight: 500; white-space: nowrap; }
+    .option:has(input:checked) { background: var(--gris-bloc, #eee); }
+    .produit-total { font-size: 1.2rem; margin: 1rem 0; }
+  </style>
 </head>
 <body>
 
@@ -29,11 +47,7 @@
 
       <div class="produit">
 
-        <!-- ===== DIAPORAMA DES PHOTOS DE L'OBJET =====
-             Une photo = un <figure class="diapo-slide">. Ajoute ou retire des blocs.
-             Pour les photos suivantes : retire le symbole de début et de fin de
-             commentaire autour de la ligne img, et indique ton fichier.
-             Photos entières sans rognage : class="diapo diapo--entier". -->
+        <!-- ===== DIAPORAMA DES PHOTOS DE L'OBJET ===== -->
         <div class="diapo" data-diapo>
           <div class="diapo-cadre">
             <div class="diapo-piste" aria-label="Photos de l'objet">
@@ -42,7 +56,7 @@
               </figure>
               <!-- Photo 2 (à activer) :
               <figure class="diapo-slide">
-                <img src="../images/boutique/orchidee-cymbidium/2.webp" alt="Cymbidium bordeau, vue 2" loading="lazy">
+                <img src="../../images/boutique/orchidee-cymbidium/2.webp" alt="Cymbidium bordeau, vue 2" loading="lazy">
               </figure>
               -->
             </div>
@@ -58,48 +72,122 @@
         <!-- ===== INFORMATIONS ===== -->
         <div class="produit-infos">
           <h1 class="produit-titre">Cymbidium bordeau</h1>
-          <p class="produit-prix"><span class="a-completer">35 €</span></p>
+          <p class="produit-prix">35 €</p>
 
           <div class="produit-description">
-            <p>Cymbidium bordeau : orchidée imprimée en 3D et peinte à la main, pièce réalisée par Elsa Chazallet. </span></p>
-            <p>Les orchidées aimantées sont toutes uniques. Je les peins minutieusement à la main. Au dos de l'orchidée, 
-              l'aimant permet de l'exposer partoutchez vous: sur un clou dans le mur, sur un meuble en métal, sur votre frigo.
-            <br>Mais aussi, vous pouvez selectionner la tige qui va avec, que vous pouvez planter dans vos pots de fleurs (voir ci-dessous)</p>
-          
+            <p>Orchidée imprimée en 3D et peinte à la main, pièce réalisée par Elsa Chazallet.</p>
+            <p>Les orchidées aimantées sont toutes uniques. Je les peins minutieusement à la main. Au dos de l’orchidée, l’aimant permet de l’exposer partout chez vous : sur un clou dans le mur, sur un meuble en métal, sur votre frigo.<br>
+            Vous pouvez aussi ajouter la tige qui va avec, que vous pouvez planter dans vos pots de fleurs (voir ci-dessous).</p>
           </div>
 
           <dl class="produit-details">
-            <div><dt>Dimensions</dt><dd><span class="a-completer">12 × 11 cm</span></dd></div>
+            <div><dt>Dimensions</dt><dd>12 × 11 cm</dd></div>
             <div><dt>Fabrication</dt><dd>Imprimée en 3D, peinte à la main</dd></div>
-            <div><dt>Délai</dt><dd>À compléter</dd></div>
+            <div><dt>Délai</dt><dd><span class="a-completer">À compléter</span></dd></div>
           </dl>
 
-          <!-- BOUTON D'ACHAT : remplace l'adresse par le lien de paiement de cet objet.
-               Objet vendu : class="bouton-achat est-epuise" et texte "Vendu". -->
-          <a class="bouton-achat" href="https://pay.sumup.com/b2c/QO65LXDF">Acheter · 35 €</a>
+          <!-- ===== OPTIONS ===== -->
+          <fieldset class="options">
+            <legend>Option</legend>
+            <label class="option">
+              <input type="checkbox" id="opt-tige">
+              <span>Ajouter la tige à planter</span>
+              <strong>+ 5 €</strong>
+            </label>
+          </fieldset>
+
+          <fieldset class="options">
+            <legend>Livraison</legend>
+            <label class="option">
+              <input type="radio" name="livraison" value="main" checked>
+              <span>Remise en main propre</span>
+              <strong>0 €</strong>
+            </label>
+            <label class="option">
+              <input type="radio" name="livraison" value="poste">
+              <span>Envoi par La Poste</span>
+              <strong id="prix-poste">00 €</strong>
+            </label>
+          </fieldset>
+
+          <p class="produit-total">Total : <strong id="total">35 €</strong></p>
+
+          <!-- Le lien de ce bouton est choisi automatiquement par le script plus bas -->
+          <a class="bouton-achat" id="bouton-achat" href="https://pay.sumup.com/b2c/QO65LXDF">Acheter · 35 €</a>
 
           <a class="bouton-secondaire" href="mailto:chazallet.elsa@hotmail.fr?subject=Question%20sur%20%3A%20Cymbidium%20bordeau">Une question ? Me contacter</a>
 
           <div class="produit-notes">
             <p>Paiement sécurisé par carte bancaire (SumUp).</p>
-            <p>Livraison : à compléter (zones, délais, frais).</p>
+            <p>Livraison : <span class="a-completer">à compléter (zones, délais)</span>.</p>
             <p>Retours et rétractation : voir les conditions générales de vente.</p>
           </div>
         </div>
 
       </div>
-      <h2>La tige permet d'aimanter votre fleur dessus, et de la planter dans vos pots</h2>
-       <section class="rang rang--pleine">
+
+      <h2>La tige permet d’aimanter votre fleur dessus, et de la planter dans vos pots</h2>
+      <section class="rang rang--pleine">
         <figure class="fig">
-          <img src="../../images/BiénaleOrchidée2026/images_situ (5).webp">
+          <img src="../../images/BiénaleOrchidée2026/images_situ (5).webp" alt="La tige de l’orchidée plantée dans un pot">
         </figure>
-            
+      </section>
+
     </main>
 
   </div>
 
-  <script src="../diaporama.js" defer></script>
+  <script src="../../diaporama.js" defer></script>
 
-  
+  <!-- =====================================================
+       OPTIONS ET PRIX
+       Un lien SumUp par combinaison (4 au total pour cet objet).
+       Les prix sont ici : modifie-les en haut, le total se met à jour tout seul.
+       Les liens : remplace chaque adresse https://LIEN-... par celui de SumUp.
+       ===================================================== -->
+  <script>
+    (function () {
+      var PRIX_OBJET = 35;     // prix de l'orchidée
+      var PRIX_TIGE  = 5;      // supplément tige
+      var PRIX_POSTE = 0;      // frais d'envoi : à remplir (ex. 6)
+
+      // Clé = "tige" ou "sans" + "-" + "main" ou "poste"
+      var LIENS = {
+        'sans-main':  'https://pay.sumup.com/b2c/QO65LXDF',
+        'tige-main':  'https://LIEN-SUMUP-OBJET-PLUS-TIGE',
+        'sans-poste': 'https://LIEN-SUMUP-OBJET-PLUS-ENVOI',
+        'tige-poste': 'https://LIEN-SUMUP-OBJET-TIGE-ENVOI'
+      };
+
+      var tige   = document.getElementById('opt-tige');
+      var radios = document.querySelectorAll('input[name="livraison"]');
+      var total  = document.getElementById('total');
+      var bouton = document.getElementById('bouton-achat');
+      var poste  = document.getElementById('prix-poste');
+      if (!tige || !total || !bouton) return;
+
+      poste.textContent = PRIX_POSTE + ' €';
+
+      function mettreAJour() {
+        var livraison = 'main';
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) livraison = radios[i].value;
+        }
+        var somme = PRIX_OBJET
+          + (tige.checked ? PRIX_TIGE : 0)
+          + (livraison === 'poste' ? PRIX_POSTE : 0);
+        total.textContent = somme + ' €';
+        bouton.textContent = 'Acheter · ' + somme + ' €';
+        bouton.href = LIENS[(tige.checked ? 'tige' : 'sans') + '-' + livraison];
+      }
+
+      tige.addEventListener('change', mettreAJour);
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('change', mettreAJour);
+      }
+      mettreAJour();
+    })();
+  </script>
+
 </body>
 </html>
