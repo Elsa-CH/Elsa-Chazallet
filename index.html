@@ -486,54 +486,68 @@ Une histoire des relations entre l’art et l’informatique.</p></p>
       <h2>Boutique</h2>
       
       <h3>Orchidées en impression 3D peintes à la main</h3>
-      <div class="diaporama">
-  <!-- Boutons radio cachés -->
+<div class="diaporama-wrapper">
+  <!-- Boutons radio cachés (placés ici pour contrôler tout le bloc) -->
   <input type="radio" name="slide" id="slide1" checked>
   <input type="radio" name="slide" id="slide2">
   <input type="radio" name="slide" id="slide3">
 
-  <!-- Conteneur des diapositives -->
-  <div class="slides">
-    <div class="slide">
-      <a href="page1.html">
-        <img src="images/BiénaleOrchidée2026/orchidée (1).webp" alt="Description image 1">
-         <span class="card-overlay">
-            <span class="card-cat">Je choisis!</span>
-            <span class="card-title">Cymbidium</span>
-           </a>
-          </span>
+  <!-- Fenêtre carrée des images -->
+  <div class="diaporama">
+    <div class="slides">
       
-    </div>
-    <div class="slide">
-      <a href="page2.html">
-        <img src="images/BiénaleOrchidée2026/orchidée (2).webp" alt="Description image 2">
-      </a>
-    </div>
-    <div class="slide">
-      <a href="page3.html">
-        <img src="images/BiénaleOrchidée2026/orchidée (3).webp" alt="Description image 3">
-      </a>
+      <!-- Image 1 -->
+      <div class="slide">
+        <a href="achat-orchidee.html" class="slide-card">
+          <img src="images/BiénaleOrchidée2026/orchidée (1).webp" alt="Orchidée Cymbidium">
+          <div class="slide-overlay">
+            <span class="slide-cat">Je choisis!</span>
+            <h3 class="slide-title">Orchidée Cymbidium</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="slide">
+        <a href="achat-fleur2.html" class="slide-card">
+          <img src="images/BiénaleOrchidée2026/orchidée (2).webp" alt="Fleur 2">
+          <div class="slide-overlay">
+            <span class="slide-cat">Je choisis!</span>
+            <h3 class="slide-title">Nom de la plante 2</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="slide">
+        <a href="achat-fleur3.html" class="slide-card">
+          <img src="images/BiénaleOrchidée2026/orchidée (3).webp" alt="Fleur 3">
+          <div class="slide-overlay">
+            <span class="slide-cat">Je choisis!</span>
+            <h3 class="slide-title">Nom de la plante 3</h3>
+          </div>
+        </a>
+      </div>
+
     </div>
   </div>
 
-  <!-- Flèches de navigation (une paire par slide active) -->
+  <!-- Flèches extérieures (rondes et noires) -->
   <div class="fleches fleches-1">
-    <label for="slide3" class="prev">&#10094;</label>
-    <label for="slide2" class="next">&#10095;</label>
+    <label for="slide3" class="prev" aria-label="Précédent">&#10094;</label>
+    <label for="slide2" class="next" aria-label="Suivant">&#10095;</label>
   </div>
 
   <div class="fleches fleches-2">
-    <label for="slide1" class="prev">&#10094;</label>
-    <label for="slide3" class="next">&#10095;</label>
+    <label for="slide1" class="prev" aria-label="Précédent">&#10094;</label>
+    <label for="slide3" class="next" aria-label="Suivant">&#10095;</label>
   </div>
 
   <div class="fleches fleches-3">
-    <label for="slide2" class="prev">&#10094;</label>
-    <label for="slide1" class="next">&#10095;</label>
+    <label for="slide2" class="prev" aria-label="Précédent">&#10094;</label>
+    <label for="slide1" class="next" aria-label="Suivant">&#10095;</label>
   </div>
-    </section>
-
-  </div>
+</div>
 
 </body>
 </html>
