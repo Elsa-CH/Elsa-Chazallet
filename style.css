@@ -1000,9 +1000,23 @@ a.evenement-affiche:focus-visible {
 }
 
 /* --- DÉFILEMENT ET FLÈCHES EXTÉRIEURES --- */
-#slide1:checked ~ .diaporama .slides { transform: translateX(0%); }
-#slide2:checked ~ .diaporama .slides { transform: translateX(-33.3333%); }
-#slide3:checked ~ .diaporama .slides { transform: translateX(-66.6666%); }
+#slide1:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 0 / 17)); }
+#slide2:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 1 / 17)); }
+#slide3:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 2 / 17)); }
+#slide4:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 3 / 17)); }
+#slide5:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 4 / 17)); }
+#slide6:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 5 / 17)); }
+#slide7:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 6 / 17)); }
+#slide8:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 7 / 17)); }
+#slide9:checked ~ .diaporama .slides  { transform: translateX(calc(-100% * 8 / 17)); }
+#slide10:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 9 / 17)); }
+#slide11:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 10 / 17)); }
+#slide12:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 11 / 17)); }
+#slide13:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 12 / 17)); }
+#slide14:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 13 / 17)); }
+#slide15:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 14 / 17)); }
+#slide16:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 15 / 17)); }
+#slide17:checked ~ .diaporama .slides { transform: translateX(calc(-100% * 16 / 17)); }
 
 .fleches {
   display: none;
@@ -1010,7 +1024,21 @@ a.evenement-affiche:focus-visible {
 
 #slide1:checked ~ .fleches-1,
 #slide2:checked ~ .fleches-2,
-#slide3:checked ~ .fleches-3 {
+#slide3:checked ~ .fleches-3,
+#slide4:checked ~ .fleches-4,
+#slide5:checked ~ .fleches-5,
+#slide6:checked ~ .fleches-6,
+#slide7:checked ~ .fleches-7,
+#slide8:checked ~ .fleches-8,
+#slide9:checked ~ .fleches-9,
+#slide10:checked ~ .fleches-10,
+#slide11:checked ~ .fleches-11,
+#slide12:checked ~ .fleches-12,
+#slide13:checked ~ .fleches-13,
+#slide14:checked ~ .fleches-14,
+#slide15:checked ~ .fleches-15,
+#slide16:checked ~ .fleches-16,
+#slide17:checked ~ .fleches-17 {
   display: block;
 }
 
