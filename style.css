@@ -899,32 +899,79 @@ a.evenement-affiche:focus-visible {
    DIAPORAMA  BOUTIQUE
    ========================================================= */
 
-/* Conteneur principal du diaporama */
-.slider-container {
-  width: 100%;
+.diaporama {
+  position: relative;
+  width: 400px; /* Modifiez cette valeur pour ajuster la taille */
+  aspect-ratio: 1 / 1; /* Force le format carré */
   margin: 0 auto;
   overflow: hidden;
-  }
-
-/* Piste qui contient les slides alignées horizontalement */
-.slider {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory; /* Force l'arrêt net sur chaque slide */
-  scroll-behavior: smooth;      /* Défilement fluide */
-  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
 }
 
-/* Chaque slide prend 100% de la largeur du conteneur */
+.diaporama input[type="radio"] {
+  display: none;
+}
+
+/* Conteneur des images */
+.slides {
+  display: flex;
+  width: 300%; /* 100% par image (3 images = 300%) */
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
 .slide {
-  flex: 0 0 100%;
+  width: 33.3333%; /* 100% divisé par 3 images */
+  height: 100%;
+}
+
+.slide a {
+  display: block;
   width: 100%;
-  scroll-snap-align: start; /* Ancrage au début de chaque slide */
+  height: 100%;
 }
 
 .slide img {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* Évite de déformer l'image */
   display: block;
 }
+
+/* Défilement au clic */
+#slide1:checked ~ .slides { transform: translateX(0%); }
+#slide2:checked ~ .slides { transform: translateX(-33.3333%); }
+#slide3:checked ~ .slides { transform: translateX(-66.6666%); }
+
+/* Gestion des flèches */
+.fleches {
+  display: none; /* Cachées par défaut */
+}
+
+/* Affiche uniquement la paire de flèches correspondant à l'image active */
+#slide1:checked ~ .fleches-1,
+#slide2:checked ~ .fleches-2,
+#slide3:checked ~ .fleches-3 {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
