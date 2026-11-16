@@ -1,4 +1,4 @@
-is<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta name="google-site-verification" content="2aqZLCkCCLt42S-IdAfxuPuVSyjlHiUB_ahe3I372Rg" />
@@ -40,12 +40,7 @@ is<!DOCTYPE html>
 
   <div class="page">
 
-    <!-- =====================================================
-         EN-TÊTE
-         Pour ajouter ton image : remplace le commentaire
-         ci-dessous par la ligne <img> (sans les <!-- -->
-        
-  
+    <!-- EN-TÊTE -->
     <header class="header-image">
       <img src="images/elsachazallet.svg" alt="Elsa Chazallet"> SITE EN CONSTRUCTION
     </header>
@@ -484,9 +479,192 @@ Une histoire des relations entre l’art et l’informatique.</p></p>
          ===================================================== -->
     <section class="panel panel-texte" id="panel-boutique">
       <h2>Boutique</h2>
-      
+
       <h3>Orchidées en impression 3D peintes à la main</h3>
 
+      <!--
+        VITRINE : un objet = un bloc <a class="vitrine-slide"> ... </a>
+        - href : la page d'achat de l'objet (dossier boutique/)
+        - Pour mettre la photo : retire le symbole de début et le symbole de
+          fin de commentaire autour de la ligne img, et indique ton fichier.
+        - vitrine-nom : le nom affiché en gras
+        - Texte blanc (photo sombre) : class="vitrine-slide texte-blanc"
+        Pour ajouter ou retirer un objet : copie ou supprime un bloc entier.
+        Les images (carrées de préférence, 1000 x 1000 px, en .webp) se
+        remplissent toujours dans un carré : le surplus est rogné.
+      -->
+      <div class="vitrine" data-vitrine role="region" aria-roledescription="carrousel" aria-label="Les objets de la boutique">
+
+        <button class="vitrine-fleche vitrine-prec" type="button" aria-label="Objet précédent">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3.5 7 12l8.5 8.5" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="square"/></svg>
+        </button>
+
+        <div class="vitrine-piste">
+
+        <a class="vitrine-slide" href="boutique/orchidee-cymbidium.html">
+          <!-- <img src="images/boutique/orchidee-cymbidium.webp" alt="Orchidée Cymbidium"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Orchidée Cymbidium</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-2.html">
+          <!-- <img src="images/boutique/objet-2.webp" alt="Nom de l’objet 2" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 2</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-3.html">
+          <!-- <img src="images/boutique/objet-3.webp" alt="Nom de l’objet 3" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 3</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-4.html">
+          <!-- <img src="images/boutique/objet-4.webp" alt="Nom de l’objet 4" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 4</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-5.html">
+          <!-- <img src="images/boutique/objet-5.webp" alt="Nom de l’objet 5" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 5</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-6.html">
+          <!-- <img src="images/boutique/objet-6.webp" alt="Nom de l’objet 6" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 6</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-7.html">
+          <!-- <img src="images/boutique/objet-7.webp" alt="Nom de l’objet 7" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 7</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-8.html">
+          <!-- <img src="images/boutique/objet-8.webp" alt="Nom de l’objet 8" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 8</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-9.html">
+          <!-- <img src="images/boutique/objet-9.webp" alt="Nom de l’objet 9" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 9</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-10.html">
+          <!-- <img src="images/boutique/objet-10.webp" alt="Nom de l’objet 10" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 10</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-11.html">
+          <!-- <img src="images/boutique/objet-11.webp" alt="Nom de l’objet 11" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 11</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-12.html">
+          <!-- <img src="images/boutique/objet-12.webp" alt="Nom de l’objet 12" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 12</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-13.html">
+          <!-- <img src="images/boutique/objet-13.webp" alt="Nom de l’objet 13" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 13</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-14.html">
+          <!-- <img src="images/boutique/objet-14.webp" alt="Nom de l’objet 14" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 14</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-15.html">
+          <!-- <img src="images/boutique/objet-15.webp" alt="Nom de l’objet 15" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 15</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-16.html">
+          <!-- <img src="images/boutique/objet-16.webp" alt="Nom de l’objet 16" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 16</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-17.html">
+          <!-- <img src="images/boutique/objet-17.webp" alt="Nom de l’objet 17" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 17</span>
+          </span>
+        </a>
+
+        <a class="vitrine-slide" href="boutique/objet-18.html">
+          <!-- <img src="images/boutique/objet-18.webp" alt="Nom de l’objet 18" loading="lazy"> -->
+          <span class="vitrine-texte">
+            <span class="vitrine-invite">Je choisis !</span>
+            <span class="vitrine-nom">Nom de l’objet 18</span>
+          </span>
+        </a>
+
+        </div>
+
+        <button class="vitrine-fleche vitrine-suiv" type="button" aria-label="Objet suivant">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3.5 17 12l-8.5 8.5" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="square"/></svg>
+        </button>
+
+      </div>
+
     </section>
+
+  </div>
+
+  <!-- Ouvre directement un onglet depuis l'adresse : index.html#boutique -->
+  <script>
+    (function () {
+      var radio = document.getElementById('tab-' + location.hash.replace('#', ''));
+      if (radio) { radio.checked = true; }
+    })();
+  </script>
+  <script src="vitrine.js" defer></script>
+
 </body>
 </html>
