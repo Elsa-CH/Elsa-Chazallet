@@ -106,7 +106,7 @@
             <label class="option">
               <input type="radio" name="livraison" value="poste">
               <span>Envoi par La Poste</span>
-              <strong id="prix-poste">00 €</strong>
+              <strong id="prix-poste">5,49 €</strong>
             </label>
           </fieldset>
 
@@ -149,14 +149,14 @@
     (function () {
       var PRIX_OBJET = 35;     // prix de l'orchidée
       var PRIX_TIGE  = 5;      // supplément tige
-      var PRIX_POSTE = 0;      // frais d'envoi : à remplir (ex. 6)
+      var PRIX_POSTE = 5,49;      // frais d'envoi : à remplir (ex. 6)
 
       // Clé = "tige" ou "sans" + "-" + "main" ou "poste"
       var LIENS = {
         'sans-main':  'https://pay.sumup.com/b2c/QO65LXDF',
-        'tige-main':  'https://LIEN-SUMUP-OBJET-PLUS-TIGE',
-        'sans-poste': 'https://LIEN-SUMUP-OBJET-PLUS-ENVOI',
-        'tige-poste': 'https://LIEN-SUMUP-OBJET-TIGE-ENVOI'
+        'tige-main':  'https://pay.sumup.com/b2c/QQFF797U',
+        'sans-poste': 'https://pay.sumup.com/b2c/QO65LXDF',
+        'tige-poste': 'https://pay.sumup.com/b2c/Q2C8AG6L'
       };
 
       var tige   = document.getElementById('opt-tige');
