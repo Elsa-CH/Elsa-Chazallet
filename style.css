@@ -902,12 +902,9 @@ a.evenement-affiche:focus-visible {
 /* Conteneur principal du diaporama */
 .slider-container {
   width: 100%;
-  max-width: 600px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+  }
 
 /* Piste qui contient les slides alignées horizontalement */
 .slider {
@@ -916,15 +913,6 @@ a.evenement-affiche:focus-visible {
   scroll-snap-type: x mandatory; /* Force l'arrêt net sur chaque slide */
   scroll-behavior: smooth;      /* Défilement fluide */
   -webkit-overflow-scrolling: touch;
-}
-
-/* Masquer la barre de défilement pour un rendu propre */
-.slider::-webkit-scrollbar {
-  display: none;
-}
-.slider {
-  -ms-overflow-style: none;  /* IE et Edge */
-  scrollbar-width: none;     /* Firefox */
 }
 
 /* Chaque slide prend 100% de la largeur du conteneur */
