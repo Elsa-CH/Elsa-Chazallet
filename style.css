@@ -1406,6 +1406,7 @@ a.evenement-affiche:focus-visible {
   overflow: hidden;
   width: min(100%, 420px);
   margin: 24px auto 0;
+  color: var(--noir);
   text-decoration: none;
 }
 
@@ -1418,19 +1419,22 @@ a.evenement-affiche:focus-visible {
 
 .illustration-lien:hover img,
 .illustration-lien:focus-visible img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-.illustration-lien:hover .card-overlay,
-.illustration-lien:focus-visible .card-overlay {
-  opacity: 1;
+.illustration-lien:focus-visible {
+  outline: 2px solid var(--noir);
+  outline-offset: -4px;
 }
 
-.illustration-lien:hover .card-title,
-.illustration-lien:focus-visible .card-title {
-  transform: none;
+/* Texte blanc, pour une image sombre : class="illustration-lien texte-blanc" */
+.illustration-lien.texte-blanc {
+  color: var(--blanc);
 }
 
+.illustration-lien.texte-blanc .vitrine-texte {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
 .illustration-lien:focus-visible {
   outline: 2px solid var(--noir);
   outline-offset: 3px;
