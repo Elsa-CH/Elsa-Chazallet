@@ -1400,8 +1400,38 @@ a.evenement-affiche:focus-visible {
   height: 46%;
 }
 /* Format illustration boutique */
-.illustration-lien { display: block; width: min(100%, 320px); margin-top: 16px; text-decoration: none; }
-.illustration-lien img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-.illustration-nom { display: block; margin-top: 10px; font-weight: 500; }
-.illustration-invite { display: block; font-size: 0.8rem; font-weight: 300; }
-.illustration-lien:hover .illustration-nom { text-decoration: underline; }
+.illustration-lien {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: min(100%, 420px);
+  margin: 24px auto 0;
+  text-decoration: none;
+}
+
+.illustration-lien img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.illustration-lien:hover img,
+.illustration-lien:focus-visible img {
+  transform: scale(1.05);
+}
+
+.illustration-lien:hover .card-overlay,
+.illustration-lien:focus-visible .card-overlay {
+  opacity: 1;
+}
+
+.illustration-lien:hover .card-title,
+.illustration-lien:focus-visible .card-title {
+  transform: none;
+}
+
+.illustration-lien:focus-visible {
+  outline: 2px solid var(--noir);
+  outline-offset: 3px;
+}
