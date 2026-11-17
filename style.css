@@ -767,7 +767,7 @@ a.evenement-affiche:focus-visible {
 }
 
 /* 6 images côte à côte */
-.rang--cinq {
+.rang--six {
   --ratio: 1 / 1;
   grid-template-columns: repeat(6, 1fr);
 }
