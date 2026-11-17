@@ -1399,3 +1399,9 @@ a.evenement-affiche:focus-visible {
   width: 46%;
   height: 46%;
 }
+/* Format illustration boutique */
+.illustration-lien { display: block; width: min(100%, 320px); margin-top: 16px; text-decoration: none; }
+.illustration-lien img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.illustration-nom { display: block; margin-top: 10px; font-weight: 500; }
+.illustration-invite { display: block; font-size: 0.8rem; font-weight: 300; }
+.illustration-lien:hover .illustration-nom { text-decoration: underline; }
