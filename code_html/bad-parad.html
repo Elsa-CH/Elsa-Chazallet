@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bad Parad — Elsa Chazallet</title>
-  <meta name="description" content="Bad Parad : projet performatif, design d'Elsa Chazallet.">
+  <meta name="description" content="Bad Parad : projet d’Elsa Chazallet. (À compléter : une phrase de description, elle apparaît dans Google.)">
 
   <link rel="icon" href="/icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/icon.png">
@@ -13,10 +13,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- ../ = on remonte d'un dossier, puisque cette page est dans "projets/" -->
+  <!-- ../ = on remonte d'un dossier : la page est dans le sous-dossier code_html -->
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
+  <!--
+    MODE D'EMPLOI (à supprimer quand ta page est finie)
+
+    Une page projet = le titre + des RANGÉES empilées dans l'ordre de ton choix.
+    Chaque rangée est un bloc <section class="rang rang--NOM"> ... </section>.
+    Copie, colle, déplace ou supprime des rangées librement.
+
+    Noms disponibles :
+      rang--image-texte  grande image à gauche, texte à droite
+      rang--texte-image  texte à gauche, grande image à droite
+      rang--texte-deux   texte à gauche, 2 images hautes à droite
+      rang--deux-texte   2 images hautes à gauche, texte à droite
+      rang--pleine       1 image pleine largeur
+      rang--deux         2 images côte à côte
+      rang--trois        3 images côte à côte
+      rang--texte        texte seul
+      rang--video        vidéo YouTube ou Vimeo
+      rang--audio        lecteur SoundCloud ou Bandcamp
+
+    Les blocs entre symboles de commentaire sont des modèles prêts à servir :
+    retire le symbole de début et le symbole de fin pour les activer.
+    Proportions d'UNE image : class="fig ratio-portrait" (ou ratio-paysage,
+    ratio-carre, ratio-large, ratio-panorama, ratio-libre = sans rognage).
+  -->
 
   <div class="page">
 
@@ -25,45 +50,45 @@
       <img src="../images/elsachazallet.svg" alt="Elsa Chazallet">
     </a>
 
-    <main>
+    <main class="fiche">
 
-      <!-- TEXTE DU PROJET -->
-      <article class="projet">
-        <a class="retour" href="../index.html">← Retour à la galerie</a>
+      <a class="retour" href="../index.html">&lt;&lt; Retour</a>
+      <h1 class="fiche-titre">Bad Parad</h1>
+      <p class="fiche-annee"><span class="a-completer">Type de projet, lieu</span><br>
+        <span class="a-completer">Année</span></p>
 
-        <h1 class="projet-titre">Bad Parad</h1>
-        <p class="projet-meta">Performatif, Design</p>
-
-        <div class="projet-texte">
-          <!-- À REMPLIR : texte de présentation du projet -->
-          <p>Texte de présentation à venir.</p>
+      <!-- RANGÉE 1 : grande image à gauche, texte à droite -->
+      <section class="rang rang--image-texte">
+        <figure class="fig ratio-libre">
+          <img src="../images/BADxCNDC/badxcndc (1).webp" alt="Bad Parad">
+        </figure>
+        <div class="rang-texte">
+          <p><span class="a-completer">Texte de présentation du projet.</span></p>
         </div>
-      </article>
+      </section>
 
-      <!-- IMAGES ET VIDÉOS
-           class="media large" = pleine largeur, class="media" = demi-largeur.
-           Pour supprimer un bloc, supprime tout le <figure>...</figure>. -->
-      <div class="projet-medias">
-
-        <figure class="media large">
-          <img src="../images/BADPARAD/1I1A9888.JPG" alt="Bad Parad">
+      <!-- RANGÉE 2 (modèle) : deux images côte à côte
+      <section class="rang rang--deux">
+        <figure class="fig">
+          <img src="../images/DOSSIER/NOM-IMAGE-1.webp" alt="Bad Parad, vue 2" loading="lazy">
         </figure>
-
-        <figure class="media">
-          <!-- <img src="../images/DOSSIER/image-2.jpg" alt="Description de l'image"> -->
+        <figure class="fig">
+          <img src="../images/DOSSIER/NOM-IMAGE-2.webp" alt="Bad Parad, vue 3" loading="lazy">
         </figure>
+      </section>
+      -->
 
-        <figure class="media">
-          <!-- <img src="../images/DOSSIER/image-3.jpg" alt="Description de l'image"> -->
+      <!-- RANGÉE 3 (modèle) : vidéo YouTube (adresse en /embed/ + identifiant de la vidéo)
+      <section class="rang rang--video">
+        <figure class="fig">
+          <iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" title="Bad Parad, vidéo" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </figure>
+      </section>
+      -->
 
-        <!-- Exemple de vidéo YouTube (remplace VIDEO_ID par la fin du lien) :
-        <figure class="media large">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Titre de la vidéo" allowfullscreen></iframe>
-        </figure>
-        -->
-
-      </div>
+      <!-- Crédit photo (modèle)
+      <p>Crédit photo : NOM</p>
+      -->
 
     </main>
 

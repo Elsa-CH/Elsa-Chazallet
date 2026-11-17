@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pièce montée — Elsa Chazallet</title>
+  <meta name="description" content="Pièce montée : projet d’Elsa Chazallet. (À compléter : une phrase de description, elle apparaît dans Google.)">
+
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- ../ = on remonte d'un dossier : la page est dans le sous-dossier code_html -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!--
+    MODE D'EMPLOI (à supprimer quand ta page est finie)
+
+    Une page projet = le titre + des RANGÉES empilées dans l'ordre de ton choix.
+    Chaque rangée est un bloc <section class="rang rang--NOM"> ... </section>.
+    Copie, colle, déplace ou supprime des rangées librement.
+
+    Noms disponibles :
+      rang--image-texte  grande image à gauche, texte à droite
+      rang--texte-image  texte à gauche, grande image à droite
+      rang--texte-deux   texte à gauche, 2 images hautes à droite
+      rang--deux-texte   2 images hautes à gauche, texte à droite
+      rang--pleine       1 image pleine largeur
+      rang--deux         2 images côte à côte
+      rang--trois        3 images côte à côte
+      rang--texte        texte seul
+      rang--video        vidéo YouTube ou Vimeo
+      rang--audio        lecteur SoundCloud ou Bandcamp
+
+    Les blocs entre symboles de commentaire sont des modèles prêts à servir :
+    retire le symbole de début et le symbole de fin pour les activer.
+    Proportions d'UNE image : class="fig ratio-portrait" (ou ratio-paysage,
+    ratio-carre, ratio-large, ratio-panorama, ratio-libre = sans rognage).
+  -->
+
+  <div class="page">
+
+    <!-- EN-TÊTE : cliquable, ramène à l'accueil -->
+    <a class="header-image" href="../index.html" aria-label="Retour à l'accueil">
+      <img src="../images/elsachazallet.svg" alt="Elsa Chazallet">
+    </a>
+
+    <main class="fiche">
+
+      <a class="retour" href="../index.html">&lt;&lt; Retour</a>
+      <h1 class="fiche-titre">Pièce montée</h1>
+      <p class="fiche-annee"><span class="a-completer">Type de projet, lieu</span><br>
+        <span class="a-completer">Année</span></p>
+
+      <!-- RANGÉE 1 : grande image à gauche, texte à droite -->
+      <section class="rang rang--image-texte">
+        <figure class="fig ratio-libre">
+          <img src="../images/architecture/architecture (1).webp" alt="Pièce montée">
+        </figure>
+        <div class="rang-texte">
+          <p><span class="a-completer">Texte de présentation du projet.</span></p>
+        </div>
+      </section>
+
+      <!-- RANGÉE 2 (modèle) : deux images côte à côte
+      <section class="rang rang--deux">
+        <figure class="fig">
+          <img src="../images/DOSSIER/NOM-IMAGE-1.webp" alt="Pièce montée, vue 2" loading="lazy">
+        </figure>
+        <figure class="fig">
+          <img src="../images/DOSSIER/NOM-IMAGE-2.webp" alt="Pièce montée, vue 3" loading="lazy">
+        </figure>
+      </section>
+      -->
+
+      <!-- RANGÉE 3 (modèle) : vidéo YouTube (adresse en /embed/ + identifiant de la vidéo)
+      <section class="rang rang--video">
+        <figure class="fig">
+          <iframe src="https://www.youtube.com/embed/ID_DE_LA_VIDEO" title="Pièce montée, vidéo" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </figure>
+      </section>
+      -->
+
+      <!-- Crédit photo (modèle)
+      <p>Crédit photo : NOM</p>
+      -->
+
+    </main>
+
+  </div>
+
+</body>
+</html>
