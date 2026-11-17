@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zygopetalum violette (réaliste) — Boutique — Elsa Chazallet</title>
+  <meta name="description" content="Zygopetalum violette (réaliste) : orchidée aimantée imprimée en 3D et peinte à la main.">
+
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- Mise en forme propre à cette page (options, formulaire, objet précédent/suivant). -->
+  <style>
+    .options { border: 0; margin: 1.5rem 0 1rem; padding: 0; }
+    .options legend { font-weight: 500; margin-bottom: .6rem; padding: 0; }
+    .options + .options { margin-top: 1.2rem; }
+    .option {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .75rem 1rem; margin-bottom: .5rem;
+      border: 1px solid var(--noir, #000);
+      cursor: pointer;
+    }
+    .option input { width: 1.1rem; height: 1.1rem; accent-color: var(--noir, #000); flex: none; }
+    /* Les ronds de choix sont cachés sur tout le site (onglets) : on les réaffiche ici */
+    .option input[type="radio"] { position: static; opacity: 1; pointer-events: auto; }
+    .option span { flex: 1; }
+    .option strong { font-weight: 500; white-space: nowrap; }
+    .option:has(input:checked) { background: var(--gris-bloc, #eee); }
+
+    .champ { display: block; margin-bottom: .8rem; }
+    .champ > span { display: block; font-size: .8rem; margin-bottom: .25rem; }
+    .champ input, .champ textarea {
+      width: 100%; padding: .65rem .8rem; border: 1px solid var(--noir, #000);
+      border-radius: 0; background: var(--blanc, #fff); color: inherit; font: inherit;
+    }
+    .champ textarea { min-height: 4.5rem; resize: vertical; }
+    .champs-2 { display: grid; grid-template-columns: 1fr 2fr; gap: .8rem; }
+    .aide { font-size: .8rem; font-weight: 300; margin: 0 0 .8rem; }
+    .produit-total { font-size: 1.2rem; margin: 1rem 0; }
+    .message-form { font-size: .85rem; margin: .6rem 0 0; min-height: 1.2em; }
+    button.bouton-achat:disabled { opacity: .6; cursor: wait; }
+
+    .objet-nav { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .8rem; margin: 0 0 28px; }
+    .objet-nav a { text-decoration: none; border-bottom: 1px solid transparent; }
+    .objet-nav a:hover, .objet-nav a:focus-visible { border-bottom-color: var(--noir, #000); }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <a class="header-image" href="../../index.html" aria-label="Retour à l'accueil">
+      <img src="../../images/elsachazallet.svg" alt="Elsa Chazallet">
+    </a>
+
+    <main class="fiche">
+
+      <a class="retour" href="../../index.html#boutique">&lt;&lt; Retour à la boutique</a>
+
+      <!-- Objet précédent / suivant -->
+      <nav class="objet-nav" aria-label="Autres objets">
+        <a href="orchidee16.html">&lsaquo; Précédent</a>
+        <a href="orchidee18.html">Suivant &rsaquo;</a>
+      </nav>
+
+      <div class="produit">
+
+        <!-- ===== DIAPORAMA DES PHOTOS DE L'OBJET ===== -->
+        <div class="diapo" data-diapo>
+          <div class="diapo-cadre">
+            <div class="diapo-piste" aria-label="Photos de l'objet">
+              <figure class="diapo-slide">
+                <img src="../../images/BiénaleOrchidée2026/orchidée (17).webp" alt="Zygopetalum violette (réaliste), vue 1">
+              </figure>
+              <!-- Photo 2 (à activer) :
+              <figure class="diapo-slide">
+                <img src="../../images/boutique/orchidee17/2.webp" alt="Zygopetalum violette (réaliste), vue 2" loading="lazy">
+              </figure>
+              -->
+            </div>
+            <button class="diapo-btn diapo-prec" type="button" aria-label="Photo précédente">‹</button>
+            <button class="diapo-btn diapo-suiv" type="button" aria-label="Photo suivante">›</button>
+          </div>
+          <div class="diapo-pied">
+            <div class="diapo-points"></div>
+            <span class="diapo-compteur"></span>
+          </div>
+        </div>
+
+        <!-- ===== INFORMATIONS ===== -->
+        <div class="produit-infos">
+          <h1 class="produit-titre">Zygopetalum violette (réaliste)</h1>
+          <p class="produit-prix">35 €</p>
+
+          <div class="produit-description">
+            <p>Orchidée imprimée en 3D et peinte à la main, pièce réalisée par Elsa Chazallet.</p>
+            <p>Les orchidées aimantées sont toutes uniques. Je les peins minutieusement à la main. Au dos de l’orchidée, l’aimant permet de l’exposer partout chez vous : sur un clou dans le mur, sur un meuble en métal, sur votre frigo.<br>
+            Vous pouvez aussi ajouter la tige qui va avec, que vous pouvez planter dans vos pots de fleurs (voir ci-dessous).</p>
+          </div>
+
+          <dl class="produit-details">
+            <div><dt>Dimensions</dt><dd>11 × 10 × 4 cm</dd></div>
+            <div><dt>Fabrication</dt><dd>Imprimée en 3D, peinte à la main</dd></div>
+            <div><dt>Délai de livraison</dt><dd>Gérant moi-même les livraisons, les délais peuvent être irréguliers. Merci de votre patience. Pour avoir plus de précisions sur votre commande, n’hésitez pas à me contacter !</dd></div>
+          </dl>
+
+          <!-- ===== COMMANDE : options, coordonnées, paiement ===== -->
+          <form id="commande" class="commande">
+
+            <fieldset class="options">
+              <legend>Option</legend>
+              <label class="option">
+                <input type="checkbox" id="opt-tige">
+                <span>Ajouter la tige à planter</span>
+                <strong>+ 5 €</strong>
+              </label>
+            </fieldset>
+
+            <fieldset class="options">
+              <legend>Livraison</legend>
+              <label class="option">
+                <input type="radio" name="livraison" value="main" checked>
+                <span>Remise en main propre (Angers uniquement)</span>
+                <strong>0 €</strong>
+              </label>
+              <label class="option">
+                <input type="radio" name="livraison" value="poste">
+                <span>Envoi par La Poste</span>
+                <strong id="prix-poste">5,49 €</strong>
+              </label>
+            </fieldset>
+
+            <fieldset class="options">
+              <legend>Vos coordonnées</legend>
+              <p class="aide" id="aide-livraison"></p>
+
+              <label class="champ"><span>Nom et prénom *</span>
+                <input type="text" name="nom" autocomplete="name" required></label>
+              <label class="champ"><span>Adresse e-mail *</span>
+                <input type="email" name="email" autocomplete="email" required></label>
+              <label class="champ"><span>Téléphone *</span>
+                <input type="tel" name="telephone" autocomplete="tel" required></label>
+              <label class="champ"><span>Adresse (numéro et rue) *</span>
+                <input type="text" name="adresse" autocomplete="street-address" required></label>
+              <div class="champs-2">
+                <label class="champ"><span>Code postal *</span>
+                  <input type="text" name="code_postal" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" title="5 chiffres" required></label>
+                <label class="champ"><span>Ville *</span>
+                  <input type="text" name="ville" autocomplete="address-level2" required></label>
+              </div>
+              <label class="champ"><span>Message (facultatif)</span>
+                <textarea name="message"></textarea></label>
+
+              <!-- Champ piège contre les robots : ne pas toucher -->
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+            </fieldset>
+
+            <p class="produit-total">Total : <strong id="total">35 €</strong></p>
+
+            <button class="bouton-achat" id="bouton-achat" type="submit">Acheter · 35 €</button>
+            <p class="message-form" id="message-form" role="status"></p>
+            <p class="aide">En cliquant sur « Acheter », vos informations me sont transmises pour traiter votre commande, puis vous êtes redirigé·e vers le paiement sécurisé SumUp.</p>
+          </form>
+
+          <a class="bouton-secondaire" href="mailto:chazallet.elsa@hotmail.fr?subject=Question%20sur%20%3A%20Zygopetalum%20violette%20%28r%C3%A9aliste%29">Une question ? Me contacter</a>
+          <p class="aide">Si le bouton n’ouvre rien : écris-moi à <strong>chazallet.elsa@hotmail.fr</strong> ou sur Instagram <a href="https://www.instagram.com/elsa.chazallet/">@elsa.chazallet</a>.</p>
+
+          <div class="produit-notes">
+            <p>Paiement sécurisé par carte bancaire (SumUp).</p>
+            <p>Livraison : France métropolitaine uniquement</p>
+          </div>
+        </div>
+
+      </div>
+
+      <h2>La tige en supplément permet d’aimanter votre fleur dessus, et de la planter dans vos pots</h2>
+      <section class="rang rang--pleine">
+        <figure class="fig">
+          <img src="../../images/BiénaleOrchidée2026/images_situ (5).webp" alt="La tige de l’orchidée plantée dans un pot">
+        </figure>
+      </section>
+      <section class="rang rang--deux ">
+        <figure class="fig ratio-libre">
+          <img src="../../images/BiénaleOrchidée2026/rothschildianumClient.webp" alt="Rothschildianum">
+        </figure>
+        <figure class="fig ratio-libre">
+          <img src="../../images/BiénaleOrchidée2026/psychopsisClient.webp" alt="Psychopsis">
+        </figure>
+      </section>
+
+
+    </main>
+
+  </div>
+
+  <script src="../../diaporama.js" defer></script>
+
+  <!-- =====================================================
+       OPTIONS, PRIX ET ENVOI DE LA COMMANDE
+
+       1. PRIX : modifie-les ci-dessous, le total se met à jour tout seul.
+          (Les décimales s'écrivent avec un POINT : 5.49)
+       2. LIENS : un lien SumUp par combinaison (4 au total).
+       3. FORMSPREE : c'est le service qui t'envoie par mail les coordonnées
+          du client. Remplace VOTRE-ID par ton identifiant (voir les explications).
+       ===================================================== -->
+  <script>
+    (function () {
+      var PRIX_OBJET = 35;
+      var PRIX_TIGE  = 5;
+      var PRIX_POSTE = 5.49;
+
+      var FORMSPREE = 'https://formspree.io/f/mwlolgkr';
+
+      // Clé = "tige" ou "sans" + "-" + "main" ou "poste"
+      var LIENS = {
+        'sans-main': 'https://LIEN-SUMUP-SANS-MAIN',
+        'tige-main': 'https://LIEN-SUMUP-TIGE-MAIN',
+        'sans-poste': 'https://LIEN-SUMUP-SANS-POSTE',
+        'tige-poste': 'https://LIEN-SUMUP-TIGE-POSTE'
+      };
+
+      var NOM_OBJET = 'Zygopetalum violette (réaliste)';
+
+      var form   = document.getElementById('commande');
+      var tige   = document.getElementById('opt-tige');
+      var radios = document.querySelectorAll('input[name="livraison"]');
+      var total  = document.getElementById('total');
+      var bouton = document.getElementById('bouton-achat');
+      var poste  = document.getElementById('prix-poste');
+      var aide   = document.getElementById('aide-livraison');
+      var retour = document.getElementById('message-form');
+      if (!form || !tige || !total || !bouton) return;
+
+      // Écrit un prix avec une virgule : 40.49 devient "40,49 €", 35 devient "35 €"
+      function euros(n) {
+        return n.toFixed(2).replace('.', ',').replace(',00', '') + ' €';
+      }
+      poste.textContent = euros(PRIX_POSTE);
+
+      var lienActuel = '';
+      var somme = PRIX_OBJET;
+      var livraison = 'main';
+
+      function mettreAJour() {
+        livraison = 'main';
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) livraison = radios[i].value;
+        }
+        somme = PRIX_OBJET
+          + (tige.checked ? PRIX_TIGE : 0)
+          + (livraison === 'poste' ? PRIX_POSTE : 0);
+        total.textContent = euros(somme);
+        bouton.textContent = 'Acheter · ' + euros(somme);
+        lienActuel = LIENS[(tige.checked ? 'tige' : 'sans') + '-' + livraison];
+        aide.textContent = livraison === 'poste'
+          ? 'Indiquez l’adresse où je dois envoyer votre commande.'
+          : 'Remise en main propre à Angers : indiquez votre adresse, je vous recontacte pour convenir d’un rendez-vous.';
+      }
+
+      tige.addEventListener('change', mettreAJour);
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('change', mettreAJour);
+      }
+      mettreAJour();
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        retour.textContent = '';
+        if (!form.reportValidity()) return;
+
+        if (FORMSPREE.indexOf('VOTRE-ID') !== -1) {
+          retour.textContent = 'Le formulaire n’est pas encore configuré (identifiant Formspree manquant).';
+          return;
+        }
+
+        var f = form.elements;
+        var donnees = {
+          _subject: 'Commande : ' + NOM_OBJET,
+          objet: NOM_OBJET,
+          tige: tige.checked ? 'Oui (+ ' + euros(PRIX_TIGE) + ')' : 'Non',
+          livraison: livraison === 'poste' ? 'Envoi par La Poste (' + euros(PRIX_POSTE) + ')' : 'Remise en main propre (Angers)',
+          total: euros(somme),
+          nom: f.nom.value,
+          email: f.email.value,
+          telephone: f.telephone.value,
+          adresse: f.adresse.value,
+          code_postal: f.code_postal.value,
+          ville: f.ville.value,
+          message: f.message.value,
+          _gotcha: f._gotcha.value
+        };
+
+        bouton.disabled = true;
+        bouton.textContent = 'Envoi en cours…';
+
+        fetch(FORMSPREE, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(donnees)
+        }).then(function (r) {
+          if (!r.ok) throw new Error('envoi');
+          window.location.href = lienActuel;
+        }).catch(function () {
+          bouton.disabled = false;
+          mettreAJour();
+          retour.textContent = 'Impossible d’envoyer vos informations. Réessayez, ou écrivez-moi à chazallet.elsa@hotmail.fr.';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

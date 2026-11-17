@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychopsis (réaliste) — Boutique — Elsa Chazallet</title>
+  <meta name="description" content="Psychopsis (réaliste) : orchidée aimantée imprimée en 3D et peinte à la main.">
+
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- Mise en forme propre à cette page (options, formulaire, objet précédent/suivant). -->
+  <style>
+    .options { border: 0; margin: 1.5rem 0 1rem; padding: 0; }
+    .options legend { font-weight: 500; margin-bottom: .6rem; padding: 0; }
+    .options + .options { margin-top: 1.2rem; }
+    .option {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .75rem 1rem; margin-bottom: .5rem;
+      border: 1px solid var(--noir, #000);
+      cursor: pointer;
+    }
+    .option input { width: 1.1rem; height: 1.1rem; accent-color: var(--noir, #000); flex: none; }
+    /* Les ronds de choix sont cachés sur tout le site (onglets) : on les réaffiche ici */
+    .option input[type="radio"] { position: static; opacity: 1; pointer-events: auto; }
+    .option span { flex: 1; }
+    .option strong { font-weight: 500; white-space: nowrap; }
+    .option:has(input:checked) { background: var(--gris-bloc, #eee); }
+
+    .champ { display: block; margin-bottom: .8rem; }
+    .champ > span { display: block; font-size: .8rem; margin-bottom: .25rem; }
+    .champ input, .champ textarea {
+      width: 100%; padding: .65rem .8rem; border: 1px solid var(--noir, #000);
+      border-radius: 0; background: var(--blanc, #fff); color: inherit; font: inherit;
+    }
+    .champ textarea { min-height: 4.5rem; resize: vertical; }
+    .champs-2 { display: grid; grid-template-columns: 1fr 2fr; gap: .8rem; }
+    .aide { font-size: .8rem; font-weight: 300; margin: 0 0 .8rem; }
+    .produit-total { font-size: 1.2rem; margin: 1rem 0; }
+    .message-form { font-size: .85rem; margin: .6rem 0 0; min-height: 1.2em; }
+    button.bouton-achat:disabled { opacity: .6; cursor: wait; }
+
+    .objet-nav { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .8rem; margin: 0 0 28px; }
+    .objet-nav a { text-decoration: none; border-bottom: 1px solid transparent; }
+    .objet-nav a:hover, .objet-nav a:focus-visible { border-bottom-color: var(--noir, #000); }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <a class="header-image" href="../../index.html" aria-label="Retour à l'accueil">
+      <img src="../../images/elsachazallet.svg" alt="Elsa Chazallet">
+    </a>
+
+    <main class="fiche">
+
+      <a class="retour" href="../../index.html#boutique">&lt;&lt; Retour à la boutique</a>
+
+      <!-- Objet précédent / suivant -->
+      <nav class="objet-nav" aria-label="Autres objets">
+        <a href="orchidee13.html">&lsaquo; Précédent</a>
+        <a href="orchidee15.html">Suivant &rsaquo;</a>
+      </nav>
+
+      <div class="produit">
+
+        <!-- ===== DIAPORAMA DES PHOTOS DE L'OBJET ===== -->
+        <div class="diapo" data-diapo>
+          <div class="diapo-cadre">
+            <div class="diapo-piste" aria-label="Photos de l'objet">
+              <figure class="diapo-slide">
+                <img src="../../images/BiénaleOrchidée2026/orchidée (14).webp" alt="Psychopsis (réaliste), vue 1">
+              </figure>
+              <!-- Photo 2 (à activer) :
+              <figure class="diapo-slide">
+                <img src="../../images/boutique/orchidee14/2.webp" alt="Psychopsis (réaliste), vue 2" loading="lazy">
+              </figure>
+              -->
+            </div>
+            <button class="diapo-btn diapo-prec" type="button" aria-label="Photo précédente">‹</button>
+            <button class="diapo-btn diapo-suiv" type="button" aria-label="Photo suivante">›</button>
+          </div>
+          <div class="diapo-pied">
+            <div class="diapo-points"></div>
+            <span class="diapo-compteur"></span>
+          </div>
+        </div>
+
+        <!-- ===== INFORMATIONS ===== -->
+        <div class="produit-infos">
+          <h1 class="produit-titre">Psychopsis (réaliste)</h1>
+          <p class="produit-prix">35 €</p>
+
+          <div class="produit-description">
+            <p>Orchidée imprimée en 3D et peinte à la main, pièce réalisée par Elsa Chazallet.</p>
+            <p>Les orchidées aimantées sont toutes uniques. Je les peins minutieusement à la main. Au dos de l’orchidée, l’aimant permet de l’exposer partout chez vous : sur un clou dans le mur, sur un meuble en métal, sur votre frigo.<br>
+            Vous pouvez aussi ajouter la tige qui va avec, que vous pouvez planter dans vos pots de fleurs (voir ci-dessous).</p>
+          </div>
+
+          <dl class="produit-details">
+            <div><dt>Dimensions</dt><dd>16 × 10 × 3 cm</dd></div>
+            <div><dt>Fabrication</dt><dd>Imprimée en 3D, peinte à la main</dd></div>
+            <div><dt>Délai de livraison</dt><dd>Gérant moi-même les livraisons, les délais peuvent être irréguliers. Merci de votre patience. Pour avoir plus de précisions sur votre commande, n’hésitez pas à me contacter !</dd></div>
+          </dl>
+          <a class="bouton-achat est-epuise" href="#" aria-disabled="true">Plus disponible</a>
+
+
+          <a class="bouton-secondaire" href="mailto:chazallet.elsa@hotmail.fr?subject=Question%20sur%20%3A%20Psychopsis%20%28r%C3%A9aliste%29">Une question ? Me contacter</a>
+          <p class="aide">Si le bouton n’ouvre rien : écris-moi à <strong>chazallet.elsa@hotmail.fr</strong> ou sur Instagram <a href="https://www.instagram.com/elsa.chazallet/">@elsa.chazallet</a>.</p>
+
+          <div class="produit-notes">
+            <p>Paiement sécurisé par carte bancaire (SumUp).</p>
+            <p>Livraison : France métropolitaine uniquement</p>
+          </div>
+        </div>
+
+      </div>
+
+      <h2>La tige en supplément permet d’aimanter votre fleur dessus, et de la planter dans vos pots</h2>
+      <section class="rang rang--pleine">
+        <figure class="fig">
+          <img src="../../images/BiénaleOrchidée2026/images_situ (5).webp" alt="La tige de l’orchidée plantée dans un pot">
+        </figure>
+      </section>
+      <section class="rang rang--deux ">
+        <figure class="fig ratio-libre">
+          <img src="../../images/BiénaleOrchidée2026/rothschildianumClient.webp" alt="Rothschildianum">
+        </figure>
+        <figure class="fig ratio-libre">
+          <img src="../../images/BiénaleOrchidée2026/psychopsisClient.webp" alt="Psychopsis">
+        </figure>
+      </section>
+
+
+    </main>
+
+  </div>
+
+  <script src="../../diaporama.js" defer></script>
+</body>
+</html>
