@@ -225,26 +225,16 @@ input[type="radio"] {
    GRILLE — 4 PROJETS PAR LIGNE
    ========================================================= */
 
-/* Mosaïque en lignes : chaque image garde sa proportion d'origine (paysage, carré,
-   portrait). Toutes les images d'une ligne ont la même hauteur, et la ligne se remplit
-   de gauche à droite. Le script galerie.js indique la proportion de chaque image. */
+/* Mosaïque : les images gardent leur proportion d'origine (paysage, carré,
+   portrait). Elles se rangent en 4 colonnes, de haut en bas, colonne par colonne. */
 .grid {
-  --hauteur-rang: 220px;          /* hauteur visée pour une ligne : plus petit = plus d'images par ligne */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-/* La dernière ligne ne s'étire pas sur toute la largeur */
-.grid::after {
-  content: "";
-  flex-grow: 1000000;
+  column-count: 4;
+  column-gap: 8px;
 }
 
 @media (max-width: 900px) {
   .grid {
-    --hauteur-rang: 150px;
+    column-count: 2;
   }
 
   .tabs,
@@ -259,12 +249,8 @@ input[type="radio"] {
 }
 
 @media (max-width: 480px) {
-  .grid::after {
-    display: none;
-  }
-
-  .card {
-    flex: 1 1 100%;
+  .grid {
+    column-count: 1;
   }
 }
 
@@ -276,19 +262,16 @@ input[type="radio"] {
   position: relative;
   display: block;
   overflow: hidden;
-  --r: 1.5;                       /* proportion largeur / hauteur (réglée par galerie.js) */
-  flex: var(--r) 1 calc(var(--r) * var(--hauteur-rang));
-  aspect-ratio: var(--r);
+  margin: 0 0 8px;
+  break-inside: avoid;
   background: var(--gris-bloc);
   text-decoration: none;
 }
 
 .card img {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   transition: transform 0.5s ease;
 }
 
