@@ -800,7 +800,7 @@ a.evenement-affiche:focus-visible {
 /* 1 grande image à gauche + 2 images empilées à droite */
 .rang--un-deux {
   --ratio: 4 / 3;                       /* proportion des 2 images de droite */
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .rang--un-deux .fig:first-child {
@@ -811,7 +811,7 @@ a.evenement-affiche:focus-visible {
 
 .rang--deux-un {
   --ratio: 4 / 3;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .rang--deux-un .fig:last-child {
