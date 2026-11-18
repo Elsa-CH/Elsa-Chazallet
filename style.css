@@ -175,8 +175,12 @@ input[type="radio"] {
 #f-tout:checked ~ .page .chip[for="f-tout"],
 #f-visuel:checked ~ .page .chip[for="f-visuel"],
 #f-sonore:checked ~ .page .chip[for="f-sonore"],
-#f-design:checked ~ .page .chip[for="f-design"],
 #f-performatif:checked ~ .page .chip[for="f-performatif"],
+#v-tout:checked ~ .page .chip[for="v-tout"],
+#v-design:checked ~ .page .chip[for="v-design"],
+#v-illustration:checked ~ .page .chip[for="v-illustration"],
+#v-photographie:checked ~ .page .chip[for="v-photographie"],
+#v-installation:checked ~ .page .chip[for="v-installation"],
 #ap-demarche:checked ~ .page .chip[for="ap-demarche"],
 #ap-moment:checked ~ .page .chip[for="ap-moment"],
 #ap-presse:checked ~ .page .chip[for="ap-presse"] {
@@ -285,8 +289,25 @@ input[type="radio"] {
 
 #f-visuel:checked ~ .page .card:not(.visuel),
 #f-sonore:checked ~ .page .card:not(.sonore),
-#f-design:checked ~ .page .card:not(.design),
 #f-performatif:checked ~ .page .card:not(.performatif) {
+  display: none;
+}
+
+/* Sous-filtres de "Visuel" : visibles seulement quand "Visuel" est choisi.
+   "Tout" (sous Visuel) n'a pas de règle : tous les projets visuels restent affichés. */
+.chips-sous {
+  display: none;
+  margin-top: -24px;
+}
+
+#f-visuel:checked ~ .page .chips-sous {
+  display: flex;
+}
+
+#f-visuel:checked ~ #v-design:checked ~ .page .card:not(.design),
+#f-visuel:checked ~ #v-illustration:checked ~ .page .card:not(.illustration),
+#f-visuel:checked ~ #v-photographie:checked ~ .page .card:not(.photographie),
+#f-visuel:checked ~ #v-installation:checked ~ .page .card:not(.installation) {
   display: none;
 }
 
@@ -363,8 +384,12 @@ input[type="radio"] {
 #f-tout:focus-visible ~ .page label[for="f-tout"],
 #f-visuel:focus-visible ~ .page label[for="f-visuel"],
 #f-sonore:focus-visible ~ .page label[for="f-sonore"],
-#f-design:focus-visible ~ .page label[for="f-design"],
 #f-performatif:focus-visible ~ .page label[for="f-performatif"],
+#v-tout:focus-visible ~ .page label[for="v-tout"],
+#v-design:focus-visible ~ .page label[for="v-design"],
+#v-illustration:focus-visible ~ .page label[for="v-illustration"],
+#v-photographie:focus-visible ~ .page label[for="v-photographie"],
+#v-installation:focus-visible ~ .page label[for="v-installation"],
 #ap-demarche:focus-visible ~ .page label[for="ap-demarche"],
 #ap-moment:focus-visible ~ .page label[for="ap-moment"],
 #ap-presse:focus-visible ~ .page label[for="ap-presse"] {
