@@ -30,8 +30,14 @@
   <input type="radio" name="filtre" id="f-tout" checked>
   <input type="radio" name="filtre" id="f-visuel">
   <input type="radio" name="filtre" id="f-sonore">
-  <input type="radio" name="filtre" id="f-design">
   <input type="radio" name="filtre" id="f-performatif">
+
+  <!-- Commandes invisibles : sous-filtres de "Visuel" (n'apparaissent que si Visuel est choisi) -->
+  <input type="radio" name="visuel-sous" id="v-tout" checked>
+  <input type="radio" name="visuel-sous" id="v-design">
+  <input type="radio" name="visuel-sous" id="v-illustration">
+  <input type="radio" name="visuel-sous" id="v-photographie">
+  <input type="radio" name="visuel-sous" id="v-installation">
   
   <!-- Commandes invisibles : sous-onglets de "À propos" -->
   <input type="radio" name="apropos" id="ap-demarche">
@@ -65,16 +71,29 @@
         <label class="chip" for="f-tout" tabindex="0">Tout</label>
         <label class="chip" for="f-visuel" tabindex="0">Visuel</label>
         <label class="chip" for="f-sonore" tabindex="0">Sonore</label>
-        <label class="chip" for="f-design" tabindex="0">Design</label>
         <label class="chip" for="f-performatif" tabindex="0">Performatif</label>
+      </div>
+
+      <!-- Sous-onglets de "Visuel" : affichés seulement quand "Visuel" est sélectionné -->
+      <div class="chips chips-sous">
+        <label class="chip" for="v-tout" tabindex="0">Tout</label>
+        <label class="chip" for="v-design" tabindex="0">Design</label>
+        <label class="chip" for="v-illustration" tabindex="0">Illustration</label>
+        <label class="chip" for="v-photographie" tabindex="0">Photographie</label>
+        <label class="chip" for="v-installation" tabindex="0">Installation</label>
       </div>
 
       <!--
         COMMENT AJOUTER / MODIFIER UN PROJET
         - href : l'adresse (URL) du projet
         - class : "card" + une ou plusieurs sections parmi
-                  visuel, sonore, design, performatif
+                  visuel, sonore, performatif
                   (ex. class="card visuel performatif")
+                  Un projet "visuel" peut aussi avoir un sous-type :
+                  design, illustration, photographie, installation
+                  (ex. class="card visuel design"). Tout projet design,
+                  illustration, photographie ou installation doit AUSSI
+                  avoir la classe "visuel".
         - <img> : décommente la ligne et indique ton fichier
         - card-cat : les sections affichées au survol
         - card-title : le titre affiché au survol
@@ -114,7 +133,7 @@
           </span>
         </a>
 
-        <a class="card visuel design performatif" href="code_html/stick-twix.html">
+        <a class="card visuel design performatif installation" href="code_html/stick-twix.html">
           <img src="images/StickTwix/StickTwix (2).webp" alt="Stick Twix">
           <span class="card-overlay">
             <span class="card-cat">Visuel, Design, Performatif</span>
@@ -146,7 +165,7 @@
           </span>
         </a>
 
-        <a class="card performatif design" href="code_html/bad-parad.html">
+        <a class="card performatif design visuel" href="code_html/bad-parad.html">
          <img src="images/BADxCNDC/badxcndc (1).webp" alt="Bad Parad">
           <span class="card-overlay">
             <span class="card-cat">Performatif, Design</span>
@@ -154,7 +173,7 @@
           </span>
         </a>
         
-  <a class="card visuel" href="code_html/chimere.html">
+  <a class="card visuel illustration" href="code_html/chimere.html">
          <img src="images/chimeres/chimères (8).webp" alt="Chimères">
           <span class="card-overlay">
             <span class="card-cat">Visuel</span>
@@ -162,7 +181,7 @@
           </span>
         </a>
 
-          <a class="card design" href="code_html/VaseColoré.html">
+          <a class="card design visuel" href="code_html/VaseColoré.html">
          <img src="images/vase/vase (9).webp" alt="Vase coloré">
           <span class="card-overlay">
             <span class="card-cat">Design</span>
@@ -170,7 +189,7 @@
           </span>
         </a>
 
-         <a class="card visuel" href="code_html/Inktober.html">
+         <a class="card visuel illustration" href="code_html/Inktober.html">
          <img src="images/illustrations/illustration (26).webp" alt="Inktober 2024">
           <span class="card-overlay">
             <span class="card-cat">Visuel</span>
@@ -178,7 +197,7 @@
           </span>
         </a>
 
-         <a class="card design" href="code_html/PieceMontée.html">
+         <a class="card design visuel" href="code_html/PieceMontée.html">
          <img src="images/architecture/architecture (1).webp" alt="Pièce montée">
           <span class="card-overlay">
             <span class="card-cat">Design</span>
@@ -194,7 +213,7 @@
           </span>
         </a>
 
-        <a class="card visuel" href="code_html/AutourDeOrchidee.html">
+        <a class="card visuel illustration" href="code_html/AutourDeOrchidee.html">
          <img src="images/illustrations/illustration (11).webp" alt="Autour de l'ochidée">
           <span class="card-overlay">
             <span class="card-cat">Visuel</span>
@@ -202,7 +221,7 @@
           </span>
         </a>
 
-        <a class="card visuel" href="code_html/prelerie.html">
+        <a class="card visuel illustration" href="code_html/prelerie.html">
          <img src="images/illustrations/illustration (19).webp" alt="La prêlerie">
           <span class="card-overlay">
             <span class="card-cat">Visuel</span>
@@ -210,7 +229,7 @@
           </span>
         </a>
 
-        <a class="card visuel" href="code_html/bateaunoix.html">
+        <a class="card visuel illustration" href="code_html/bateaunoix.html">
          <img src="images/illustrations/illustration (20).webp" alt="Bâteau à la noix">
           <span class="card-overlay">
             <span class="card-cat">Visuel</span>
@@ -234,7 +253,7 @@
           </span>
         </a>
 
-        <a class="card visuel" href="code_html/infiltrationphoto.html">
+        <a class="card visuel photographie" href="code_html/infiltrationphoto.html">
          <img src="images/infiltration/infiltration (12).webp" alt="Infiltration">
           <span class="card-overlay">
             <span class="card-cat">Visuel</span>
@@ -258,7 +277,7 @@
           </span>
         </a>
 
-         <a class="card sonore visuel" href="code_html/DNSEP.html">
+         <a class="card sonore visuel design performatif" href="code_html/DNSEP.html">
          <img src="images/binary_control/binary_control (16).webp" alt="DNSEP">
           <span class="card-overlay">
             <span class="card-cat">Sonore, Visuel, Performmatif, Design</span>
