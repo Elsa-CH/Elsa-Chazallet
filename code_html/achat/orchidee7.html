@@ -111,64 +111,15 @@
           </dl>
 
           <!-- ===== COMMANDE : options, coordonnées, paiement ===== -->
-          <form id="commande" class="commande">
+                  <dl class="produit-details">
+            <div><dt>Dimensions</dt><dd>12 × 11 × 5 cm</dd></div>
+            <div><dt>Fabrication</dt><dd>Imprimée en 3D, peinte à la main</dd></div>
+            <div><dt>Délai de livraison</dt><dd>Gérant moi-même les livraisons, les délais peuvent être irréguliers. Merci de votre patience. Pour avoir plus de précisions sur votre commande, n’hésitez pas à me contacter !</dd></div>
+          </dl>
+          <a class="bouton-achat est-epuise" href="#" aria-disabled="true">Plus disponible</a>
 
-            <fieldset class="options">
-              <legend>Option</legend>
-              <label class="option">
-                <input type="checkbox" id="opt-tige">
-                <span>Ajouter la tige à planter</span>
-                <strong>+ 5 €</strong>
-              </label>
-            </fieldset>
 
-            <fieldset class="options">
-              <legend>Livraison</legend>
-              <label class="option">
-                <input type="radio" name="livraison" value="main" checked>
-                <span>Remise en main propre (Angers uniquement)</span>
-                <strong>0 €</strong>
-              </label>
-              <label class="option">
-                <input type="radio" name="livraison" value="poste">
-                <span>Envoi par La Poste</span>
-                <strong id="prix-poste">5,49 €</strong>
-              </label>
-            </fieldset>
-
-            <fieldset class="options">
-              <legend>Vos coordonnées</legend>
-              <p class="aide" id="aide-livraison"></p>
-
-              <label class="champ"><span>Nom et prénom *</span>
-                <input type="text" name="nom" autocomplete="name" required></label>
-              <label class="champ"><span>Adresse e-mail *</span>
-                <input type="email" name="email" autocomplete="email" required></label>
-              <label class="champ"><span>Téléphone *</span>
-                <input type="tel" name="telephone" autocomplete="tel" required></label>
-              <label class="champ"><span>Adresse (numéro et rue) *</span>
-                <input type="text" name="adresse" autocomplete="street-address" required></label>
-              <div class="champs-2">
-                <label class="champ"><span>Code postal *</span>
-                  <input type="text" name="code_postal" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" title="5 chiffres" required></label>
-                <label class="champ"><span>Ville *</span>
-                  <input type="text" name="ville" autocomplete="address-level2" required></label>
-              </div>
-              <label class="champ"><span>Message (facultatif)</span>
-                <textarea name="message"></textarea></label>
-
-              <!-- Champ piège contre les robots : ne pas toucher -->
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
-            </fieldset>
-
-            <p class="produit-total">Total : <strong id="total">35 €</strong></p>
-
-            <button class="bouton-achat" id="bouton-achat" type="submit">Acheter · 35 €</button>
-            <p class="message-form" id="message-form" role="status"></p>
-            <p class="aide">En cliquant sur « Acheter », vos informations me sont transmises pour traiter votre commande, puis vous êtes redirigé·e vers le paiement sécurisé SumUp.</p>
-          </form>
-
-          <a class="bouton-secondaire" href="mailto:chazallet.elsa@hotmail.fr?subject=Question%20sur%20%3A%20Paphiopedilum%20orange">Une question ? Me contacter</a>
+          <a class="bouton-secondaire" href="mailto:chazallet.elsa@hotmail.fr?subject=Question%20sur%20%3A%20Cymbidium%20verte">Une question ? Me contacter</a>
           <p class="aide">Si le bouton n’ouvre rien : écris-moi à <strong>chazallet.elsa@hotmail.fr</strong> ou sur Instagram <a href="https://www.instagram.com/elsa.chazallet/">@elsa.chazallet</a>.</p>
 
           <div class="produit-notes">
@@ -200,121 +151,5 @@
   </div>
 
   <script src="../../diaporama.js" defer></script>
-
-  <!-- =====================================================
-       OPTIONS, PRIX ET ENVOI DE LA COMMANDE
-
-       1. PRIX : modifie-les ci-dessous, le total se met à jour tout seul.
-          (Les décimales s'écrivent avec un POINT : 5.49)
-       2. LIENS : un lien SumUp par combinaison (4 au total).
-       3. FORMSPREE : c'est le service qui t'envoie par mail les coordonnées
-          du client. Remplace VOTRE-ID par ton identifiant (voir les explications).
-       ===================================================== -->
-  <script>
-    (function () {
-      var PRIX_OBJET = 35;
-      var PRIX_TIGE  = 5;
-      var PRIX_POSTE = 5.49;
-
-      var FORMSPREE = 'https://formspree.io/f/mwlolgkr';
-
-      // Clé = "tige" ou "sans" + "-" + "main" ou "poste"
-      var LIENS = {
-        'sans-main': 'https://LIEN-SUMUP-SANS-MAIN',
-        'tige-main': 'https://LIEN-SUMUP-TIGE-MAIN',
-        'sans-poste': 'https://LIEN-SUMUP-SANS-POSTE',
-        'tige-poste': 'https://LIEN-SUMUP-TIGE-POSTE'
-      };
-
-      var NOM_OBJET = 'Paphiopedilum orange';
-
-      var form   = document.getElementById('commande');
-      var tige   = document.getElementById('opt-tige');
-      var radios = document.querySelectorAll('input[name="livraison"]');
-      var total  = document.getElementById('total');
-      var bouton = document.getElementById('bouton-achat');
-      var poste  = document.getElementById('prix-poste');
-      var aide   = document.getElementById('aide-livraison');
-      var retour = document.getElementById('message-form');
-      if (!form || !tige || !total || !bouton) return;
-
-      // Écrit un prix avec une virgule : 40.49 devient "40,49 €", 35 devient "35 €"
-      function euros(n) {
-        return n.toFixed(2).replace('.', ',').replace(',00', '') + ' €';
-      }
-      poste.textContent = euros(PRIX_POSTE);
-
-      var lienActuel = '';
-      var somme = PRIX_OBJET;
-      var livraison = 'main';
-
-      function mettreAJour() {
-        livraison = 'main';
-        for (var i = 0; i < radios.length; i++) {
-          if (radios[i].checked) livraison = radios[i].value;
-        }
-        somme = PRIX_OBJET
-          + (tige.checked ? PRIX_TIGE : 0)
-          + (livraison === 'poste' ? PRIX_POSTE : 0);
-        total.textContent = euros(somme);
-        bouton.textContent = 'Acheter · ' + euros(somme);
-        lienActuel = LIENS[(tige.checked ? 'tige' : 'sans') + '-' + livraison];
-        aide.textContent = livraison === 'poste'
-          ? 'Indiquez l’adresse où je dois envoyer votre commande.'
-          : 'Remise en main propre à Angers : indiquez votre adresse, je vous recontacte pour convenir d’un rendez-vous.';
-      }
-
-      tige.addEventListener('change', mettreAJour);
-      for (var i = 0; i < radios.length; i++) {
-        radios[i].addEventListener('change', mettreAJour);
-      }
-      mettreAJour();
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        retour.textContent = '';
-        if (!form.reportValidity()) return;
-
-        if (FORMSPREE.indexOf('VOTRE-ID') !== -1) {
-          retour.textContent = 'Le formulaire n’est pas encore configuré (identifiant Formspree manquant).';
-          return;
-        }
-
-        var f = form.elements;
-        var donnees = {
-          _subject: 'Commande : ' + NOM_OBJET,
-          objet: NOM_OBJET,
-          tige: tige.checked ? 'Oui (+ ' + euros(PRIX_TIGE) + ')' : 'Non',
-          livraison: livraison === 'poste' ? 'Envoi par La Poste (' + euros(PRIX_POSTE) + ')' : 'Remise en main propre (Angers)',
-          total: euros(somme),
-          nom: f.nom.value,
-          email: f.email.value,
-          telephone: f.telephone.value,
-          adresse: f.adresse.value,
-          code_postal: f.code_postal.value,
-          ville: f.ville.value,
-          message: f.message.value,
-          _gotcha: f._gotcha.value
-        };
-
-        bouton.disabled = true;
-        bouton.textContent = 'Envoi en cours…';
-
-        fetch(FORMSPREE, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(donnees)
-        }).then(function (r) {
-          if (!r.ok) throw new Error('envoi');
-          window.location.href = lienActuel;
-        }).catch(function () {
-          bouton.disabled = false;
-          mettreAJour();
-          retour.textContent = 'Impossible d’envoyer vos informations. Réessayez, ou écrivez-moi à chazallet.elsa@hotmail.fr.';
-        });
-      });
-    })();
-  </script>
-
 </body>
 </html>
